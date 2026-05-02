@@ -67,3 +67,11 @@ body {
 #button-main:hover {
   @apply bg-primary-hover -translate-y-1 shadow-uniform;
 }
+
+/* secondary button */
+#secondary-button {
+  @apply px-caption py-3 rounded-lg border-2 border-primary font-medium text-text text-md;
+}
+#secondary-button:hover {
+  @apply border-primary-hover -translate-y-1 shadow-uniform;
+}
