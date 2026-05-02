@@ -46,59 +46,59 @@ body {
 }
 
 /* header styles */
-#header {
+.header {
   @apply sticky top-0 w-screen z-50 px-md py-caption shadow-uniform bg-background;
 }
-#header #svg {
+.header .svg {
   @apply block w-3xl h-3xl p-2.5;
 }
-#header > div {
+.header > div {
   @apply flex justify-between w-full;
 }
-#header > div > div {
+.header > div > div {
   @apply flex w-fit gap-xs;
 }
 
 /* Footer styles */
-#footer {
+.footer {
   @apply absolute bottom-0 bg-dark-border w-screen text-sm font-normal text-text px-md py-caption md:px-4xl md:py-md;
 }
-#footer > div {
+.footer > div {
   @apply flex justify-between items-center w-full h-fit;
 }
-#footer > div > div {
+.footer > div > div {
   @apply w-fit flex items-center gap-sm h-fit;
 }
-#footer img {
+.footer img {
   @apply w-14 h-fit;
 }
-#footer p {
+.footer p {
   @apply w-fit h-fit;
 }
 
 /* Buttons */
 /* main button */
-#button-main,
-#button-main-icon {
+.button-main,
+.button-main-icon {
   @apply px-caption py-3 rounded-lg bg-primary font-medium text-text text-md;
 }
-#button-main:hover,
-#button-main-icon:hover {
+.button-main:hover,
+.button-main-icon:hover {
   @apply bg-primary-hover -translate-y-1 shadow-uniform;
 }
 
 /* secondary button */
-#secondary-button,
-#secondary-button-icon {
+.secondary-button,
+.secondary-button-icon {
   @apply px-caption py-3 rounded-lg border-2 border-primary font-light text-text text-md;
 }
-#secondary-button:hover,
-#secondary-button-icon:hover {
+.secondary-button:hover,
+.secondary-button-icon:hover {
   @apply border-primary-hover -translate-y-1 shadow-uniform;
 }
 
 /* Buttons with icon */
-#button-main-icon,
-#secondary-button-icon {
+.button-main-icon,
+.secondary-button-icon {
   @apply flex gap-sm;
 }

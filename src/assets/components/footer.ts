@@ -1,5 +1,5 @@
 const footer: string = /* html */ `
-  <footer id="footer">
+  <footer class="footer">
     <div>
       <div>
         <img src="src/assets/SVG/Logo.svg" alt="Thinc-logo" />
