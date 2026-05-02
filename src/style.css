@@ -136,3 +136,21 @@ body {
 .page-title h3 {
   @apply w-full h-fit text-left text-dark-white font-semibold text-md;
 }
+
+/* Card styles */
+.card {
+  @apply px-md py-lg w-42.5 text-center bg-primary border-2 border-border rounded-lg;
+}
+.card div {
+  @apply flex flex-col justify-center items-center gap-caption;
+}
+.card h2,
+.card p {
+  @apply w-fit h-fit;
+}
+.card h2 {
+  @apply font-bold text-lg text-dark-white;
+}
+.card p {
+  @apply font-normal text-md text-dark-white;
+}

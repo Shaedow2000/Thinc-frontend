@@ -17,8 +17,8 @@ const headerButtons: string = /* html */ `
     <div>
       <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
       <div>
-        ${secondary_button("Login")}
-        ${main_button("Register")}
+        ${secondaryButton("Login")}
+        ${mainButton("Register")}
       </div>
     </div>
   </header>
