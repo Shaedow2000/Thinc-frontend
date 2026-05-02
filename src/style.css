@@ -210,6 +210,8 @@ body {
 }
 
 /* Register/login section styles */
-.reg-log-section {
-  @apply w-full py-lg gap-caption flex flex-col items-center text-center text-text font-medium text-md;
+/* & For developpers section styles */
+.reg-log-section,
+.for-devs {
+  @apply w-full py-lg flex flex-col items-center gap-caption text-center text-text font-medium text-md leading-lg;
 }
