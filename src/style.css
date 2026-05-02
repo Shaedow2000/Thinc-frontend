@@ -212,6 +212,7 @@ body {
 /* Register/login section styles */
 /* & For developpers section styles */
 .reg-log-section,
-.for-devs {
+.for-devs,
+.recent-notes {
   @apply w-full py-lg flex flex-col items-center gap-caption text-center text-text font-medium text-md leading-lg;
 }
