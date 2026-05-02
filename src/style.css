@@ -90,7 +90,7 @@ body {
 /* secondary button */
 #secondary-button,
 #secondary-button-icon {
-  @apply px-caption py-3 rounded-lg border-2 border-primary font-medium text-text text-md;
+  @apply px-caption py-3 rounded-lg border-2 border-primary font-light text-text text-md;
 }
 #secondary-button:hover,
 #secondary-button-icon:hover {
