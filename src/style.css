@@ -102,3 +102,12 @@ body {
 .secondary-button-icon {
   @apply flex gap-sm;
 }
+
+/* Input styles */
+.input {
+  @apply w-full h-fit p-sm font-medium text-md text-background bg-dark-white border-2 border-dark-border rounded-lg;
+}
+.input:hover,
+.input:focus {
+  @apply -translate-y-1 bg-text shadow-uniform;
+}
