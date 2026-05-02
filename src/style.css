@@ -43,7 +43,7 @@ body {
 }
 
 #app {
-  @apply px-md md:p-4xl w-screen h-screen bg-transparent;
+  @apply px-md md:p-4xl w-screen h-fit bg-transparent;
 }
 
 /* header styles */
@@ -140,10 +140,7 @@ body {
 
 /* Card styles */
 .card {
-  @apply px-md py-lg w-42.5 text-center bg-primary border-2 border-border rounded-lg;
-}
-.card div {
-  @apply flex flex-col justify-center items-center gap-caption;
+  @apply px-md py-lg w-44 text-center bg-primary border-2 border-border rounded-lg;
 }
 .card h2,
 .card p {
@@ -199,5 +196,10 @@ body {
   @apply py-lg w-full h-fit;
 }
 .notes div {
-  @apply flex flex-wrap w-full h-fit p-0 gap-md items-center justify-center;
+  @apply flex flex-wrap w-full h-fit p-0 gap-md justify-center;
+}
+
+/* found notes section styles */
+.found-notes {
+  @apply flex flex-col py-lg gap-md;
 }

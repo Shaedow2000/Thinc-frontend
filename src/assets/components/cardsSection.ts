@@ -1,4 +1,5 @@
 import { card } from "./card";
+import { label } from "./text";
 
 const cardsSection: Function = (notes: []): string => {
   let cards: string = "";
@@ -16,4 +17,11 @@ const cardsSection: Function = (notes: []): string => {
 `;
 };
 
-export { cardsSection };
+const foundNotes: Function = (notes: []): string => `
+  <section class="found-notes">
+    ${label("Notes")}
+    ${cardsSection(notes)}
+  </section>
+`;
+
+export { cardsSection, foundNotes };
