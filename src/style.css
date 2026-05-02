@@ -32,6 +32,9 @@
   --text-2xl: 36px;
   --text-3xl: 44px;
   --text-4xl: 52px;
+
+  /* shadow size */
+  --shadow-uniform: 0 4px 4px black;
 }
 
 body {
@@ -39,12 +42,12 @@ body {
 }
 
 #app {
-  @apply px-md md:p-4xl w-screen h-250 bg-background;
+  @apply px-md md:p-4xl w-screen h-screen bg-background;
 }
 
 /* header styles */
 #header {
-  @apply sticky top-0 w-screen z-50 px-md py-caption shadow-md shadow-black;
+  @apply sticky top-0 w-screen z-50 px-md py-caption shadow-uniform;
 }
 #header #svg {
   @apply block w-3xl h-3xl p-2.5;
@@ -54,4 +57,13 @@ body {
 }
 #header > div > div {
   @apply flex w-fit gap-xs;
+}
+
+/* Buttons */
+/* main button */
+#button-main {
+  @apply px-caption py-3 rounded-lg bg-primary font-medium text-text text-md;
+}
+#button-main:hover {
+  @apply bg-primary-hover -translate-y-1 shadow-uniform;
 }
