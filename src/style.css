@@ -111,3 +111,12 @@ body {
 .input:focus {
   @apply -translate-y-1 bg-text shadow-uniform;
 }
+
+/* Texts styles */
+/* Heading */
+.heading {
+  @apply w-full py-sm flex justify-center items-center;
+}
+.heading h1 {
+  @apply w-fit h-fit text-dark-white text-lg font-bold;
+}
