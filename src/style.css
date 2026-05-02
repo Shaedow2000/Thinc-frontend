@@ -120,3 +120,11 @@ body {
 .heading h1 {
   @apply w-fit h-fit text-dark-white text-lg font-bold;
 }
+
+/* Label */
+.label {
+  @apply w-full h-fit py-xs;
+}
+.label h4 {
+  @apply w-full h-fit text-left text-text font-medium text-caption;
+}

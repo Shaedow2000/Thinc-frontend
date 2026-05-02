@@ -7,3 +7,5 @@ const input: Function = (
 ): string => `
   <input type="${type}" name="${name}" placeholder="${placeholder}" class="input" />
 `;
+
+export { input };

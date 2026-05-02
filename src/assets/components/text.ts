@@ -4,4 +4,10 @@ const heading: Function = (text: string): string => `
   </section>
 `;
 
-export { heading };
+const label: Function = (text: string): string => `
+  <section class="label">
+    <h4>${text}</h4>
+  </section>
+`;
+
+export { heading, label };
