@@ -42,7 +42,7 @@ body {
 }
 
 #app {
-  @apply px-md md:p-4xl w-screen h-screen bg-background;
+  @apply px-md md:p-4xl w-screen h-screen bg-transparent;
 }
 
 /* header styles */
@@ -78,17 +78,27 @@ body {
 
 /* Buttons */
 /* main button */
-#button-main {
+#button-main,
+#button-main-icon {
   @apply px-caption py-3 rounded-lg bg-primary font-medium text-text text-md;
 }
-#button-main:hover {
+#button-main:hover,
+#button-main-icon:hover {
   @apply bg-primary-hover -translate-y-1 shadow-uniform;
 }
 
 /* secondary button */
-#secondary-button {
+#secondary-button,
+#secondary-button-icon {
   @apply px-caption py-3 rounded-lg border-2 border-primary font-medium text-text text-md;
 }
-#secondary-button:hover {
+#secondary-button:hover,
+#secondary-button-icon:hover {
   @apply border-primary-hover -translate-y-1 shadow-uniform;
+}
+
+/* Buttons with icon */
+#button-main-icon,
+#secondary-button-icon {
+  @apply flex gap-sm;
 }
