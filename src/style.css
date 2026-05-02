@@ -13,10 +13,9 @@
 
   /* spacing sizes */
   --spacing-xs: 6px;
-  --spacing-xs: 6px;
   --spacing-sm: 8px;
   --spacing-caption: 14px;
-  --spacing-md: 8px;
+  --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
   --spacing-2xl: 36px;
@@ -25,13 +24,34 @@
 
   /* font sizes */
   --text-xs: 6px;
-  --text-xs: 6px;
   --text-sm: 8px;
   --text-caption: 14px;
-  --text-md: 8px;
+  --text-md: 16px;
   --text-lg: 24px;
   --text-xl: 32px;
   --text-2xl: 36px;
   --text-3xl: 44px;
   --text-4xl: 52px;
+}
+
+body {
+  @apply absolute top-0 bg-background;
+}
+
+#app {
+  @apply px-md md:p-4xl w-screen h-250 bg-background;
+}
+
+/* header styles */
+#header {
+  @apply sticky top-0 w-screen z-50 px-md py-caption shadow-md shadow-black;
+}
+#header #svg {
+  @apply block w-3xl h-3xl p-2.5;
+}
+#header > div {
+  @apply flex justify-between w-full;
+}
+#header > div > div {
+  @apply flex w-fit gap-xs;
 }
