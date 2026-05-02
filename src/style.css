@@ -174,3 +174,14 @@ body {
 .quote p {
   @apply font-semibold text-lg text-left text-text text-shadow-uniform;
 }
+
+/* Greeting styles */
+.greeting {
+  @apply w-full h-fit py-lg;
+}
+.greeting div {
+  @apply px-md py-lg w-full h-full;
+}
+.greeting p {
+  @apply w-full h-fit text-center text-2xl text-text font-semibold text-shadow-uniform leading-3xl;
+}
