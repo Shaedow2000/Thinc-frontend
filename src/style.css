@@ -203,3 +203,8 @@ body {
 .found-notes {
   @apply flex flex-col py-lg gap-md;
 }
+
+/* Note text */
+.note-text {
+  @apply -mx-md p-md gap-sm w-screen h-fit text-left font-normal text-md leading-lg text-text bg-dark-border;
+}

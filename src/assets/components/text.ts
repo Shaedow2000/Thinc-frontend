@@ -16,4 +16,10 @@ const pageTitle: Function = (text: string): string => `
   </section>
 `;
 
-export { heading, label, pageTitle };
+const noteText: Function = (text: string): string => `
+  <section class="note-text">
+    ${text}
+  </section>
+`;
+
+export { heading, label, pageTitle, noteText };
