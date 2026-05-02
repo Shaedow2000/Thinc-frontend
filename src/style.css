@@ -47,7 +47,7 @@ body {
 
 /* header styles */
 #header {
-  @apply sticky top-0 w-screen z-50 px-md py-caption shadow-uniform;
+  @apply sticky top-0 w-screen z-50 px-md py-caption shadow-uniform bg-background;
 }
 #header #svg {
   @apply block w-3xl h-3xl p-2.5;
@@ -57,6 +57,23 @@ body {
 }
 #header > div > div {
   @apply flex w-fit gap-xs;
+}
+
+/* Footer styles */
+#footer {
+  @apply absolute bottom-0 bg-dark-border w-screen text-sm font-normal text-text px-md py-caption md:px-4xl md:py-md;
+}
+#footer > div {
+  @apply flex justify-between items-center w-full h-fit;
+}
+#footer > div > div {
+  @apply w-fit flex items-center gap-sm h-fit;
+}
+#footer img {
+  @apply w-14 h-fit;
+}
+#footer p {
+  @apply w-fit h-fit;
 }
 
 /* Buttons */
