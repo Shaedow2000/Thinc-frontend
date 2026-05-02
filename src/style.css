@@ -35,6 +35,7 @@
 
   /* shadow size */
   --shadow-uniform: 0 4px 4px black;
+  --text-shadow-uniform: 0 4px 4px black;
 }
 
 body {
@@ -153,4 +154,15 @@ body {
 }
 .card p {
   @apply font-normal text-md text-dark-white;
+}
+
+/* Hero styles */
+.hero {
+  @apply w-full h-fit py-24;
+}
+.hero div {
+  @apply h-62.5 flex flex-col items-center justify-center px-md;
+}
+.hero p {
+  @apply w-full h-fit font-semibold text-2xl text-center text-text text-shadow-uniform;
 }
