@@ -166,3 +166,11 @@ body {
 .hero p {
   @apply w-full h-fit font-semibold text-2xl text-center text-text text-shadow-uniform;
 }
+
+/* Quote styles */
+.quote {
+  @apply w-full h-fit py-24 flex justify-between items-center gap-md;
+}
+.quote p {
+  @apply font-semibold text-lg text-left text-text text-shadow-uniform;
+}
