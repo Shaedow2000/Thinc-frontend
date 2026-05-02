@@ -128,3 +128,11 @@ body {
 .label h4 {
   @apply w-full h-fit text-left text-text font-medium text-caption;
 }
+
+/* Page title */
+.page-title {
+  @apply w-full h-fit py-xs;
+}
+.page-title h3 {
+  @apply w-full h-fit text-left text-dark-white font-semibold text-md;
+}

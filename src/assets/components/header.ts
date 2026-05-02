@@ -1,6 +1,6 @@
-import { main_button, secondary_button } from "./buttons";
+import { mainButton, secondaryButton } from "./buttons";
 
-const header_svgs: string = /* html */ `
+const headerSvgs: string = /* html */ `
   <header class="header">
     <div>
       <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
@@ -12,7 +12,7 @@ const header_svgs: string = /* html */ `
   </header>
 `;
 
-const header_buttons: string = /* html */ `
+const headerButtons: string = /* html */ `
   <header class="header">
     <div>
       <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
@@ -24,4 +24,4 @@ const header_buttons: string = /* html */ `
   </header>
 `;
 
-export { header_svgs, header_buttons };
+export { headerSvgs, headerButtons };
