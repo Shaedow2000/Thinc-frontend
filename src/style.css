@@ -208,3 +208,8 @@ body {
 .note-text {
   @apply -mx-md p-md gap-sm w-screen h-fit text-left font-normal text-md leading-lg text-text bg-dark-border;
 }
+
+/* Register/login section styles */
+.reg-log-section {
+  @apply w-full py-lg gap-caption flex flex-col items-center text-center text-text font-medium text-md;
+}
