@@ -14,7 +14,7 @@ const changePasswdPage: Function = (): void => {
         ${heading("Change your password")}
         <p>Please enter the verification code sent to the provided email address, after that you can change your password.</p>
       </div>
-      <form class="form" id="recovery-form">
+      <form class="form" id="change-passwd-form">
         <div>
           ${label("Email")}
           ${input("email", "email", "email")}
@@ -38,6 +38,27 @@ const changePasswdPage: Function = (): void => {
       </form> 
     </div>
   `;
+
+  const changePasswdForm = document.getElementById(
+    "change-passwd-form",
+  ) as HTMLFormElement;
+
+  changePasswdForm.addEventListener(
+    "submit",
+    async (e: SubmitEvent): Promise<void> => {
+      e.preventDefault();
+
+      let response = await fetch("http://localhost:8080/auth/password_reset", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(
+          Object.fromEntries(new FormData(changePasswdForm)),
+        ),
+      });
+
+      let result = await response.json();
+    },
+  );
 };
 
 export default changePasswdPage;
