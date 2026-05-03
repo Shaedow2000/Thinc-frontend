@@ -1,3 +1,3 @@
-import passwdRecoveryPage from "./pages/passwdRecovery";
+import changePasswdPage from "./pages/changePasswd";
 
-passwdRecoveryPage();
+changePasswdPage();
