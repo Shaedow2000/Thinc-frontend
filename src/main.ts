@@ -1,3 +1,3 @@
-import accountVerificationPage from "./pages/accountVerification";
+import passwdRecoveryPage from "./pages/passwdRecovery";
 
-accountVerificationPage();
+passwdRecoveryPage();
