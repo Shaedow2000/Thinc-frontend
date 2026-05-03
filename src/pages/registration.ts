@@ -9,7 +9,7 @@ const registrationPage: Function = (): void => {
   app.innerHTML = /* hmtl */ `
     ${headerButtons}
     ${pageTitle("Register")}
-    <div class="flex flex-col items-center gap-3xl w-full">
+    <div class="center-form">
       ${heading("Register a new account")}
       <form class="form" id="register-form">
         <div>

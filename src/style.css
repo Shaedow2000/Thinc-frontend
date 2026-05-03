@@ -227,6 +227,9 @@ body {
 }
 
 /* Form styles */
+.center-form {
+  @apply flex flex-col items-center gap-3xl w-full;
+}
 .form {
   @apply flex flex-col items-center gap-lg px-lg py-sm w-full h-fit;
 }
