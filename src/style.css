@@ -43,12 +43,12 @@ body {
 }
 
 #app {
-  @apply px-md md:p-4xl w-screen h-fit bg-transparent;
+  @apply flex flex-col gap-sm px-md md:p-4xl w-screen h-fit bg-transparent;
 }
 
 /* header styles */
 .header {
-  @apply sticky top-0 w-screen z-50 px-md py-caption shadow-uniform bg-background;
+  @apply -mx-md sticky top-0 w-screen z-50 px-md py-caption shadow-uniform bg-background;
 }
 .header .svg {
   @apply block w-3xl h-3xl p-2.5;
@@ -91,11 +91,11 @@ body {
 /* secondary button */
 .secondary-button,
 .secondary-button-icon {
-  @apply px-caption py-3 rounded-lg ring-2 ring-primary font-light text-text text-md;
+  @apply px-caption py-3 rounded-lg ring-2 ring-inset ring-primary font-light text-text text-md;
 }
 .secondary-button:hover,
 .secondary-button-icon:hover {
-  @apply border-primary-hover -translate-y-1 shadow-uniform;
+  @apply ring-primary-hover -translate-y-1 shadow-uniform;
 }
 
 /* Buttons with icon */
@@ -155,7 +155,7 @@ body {
 
 /* Hero styles */
 .hero {
-  @apply w-full h-fit py-24;
+  @apply w-full h-fit py-lg;
 }
 .hero div {
   @apply h-62.5 flex flex-col items-center justify-center px-md;
