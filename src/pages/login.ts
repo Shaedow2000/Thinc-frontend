@@ -20,6 +20,7 @@ const loginPage: Function = (): void => {
           ${label("Password")}
           ${input("password", "password", "password")}
         </div>
+        <a class="small-link">Forgot password?</a>
         ${mainButton("Login")}
       </form>
     </div>
