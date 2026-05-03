@@ -36,7 +36,7 @@ const passwdRecoveryPage: Function = (): void => {
       let response = await fetch(
         "http://localhost:8080/auth/reset_verification",
         {
-          method: "PATCH",
+          method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(Object.fromEntries(new FormData(recoveryForm))),
         },

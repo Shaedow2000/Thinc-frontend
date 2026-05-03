@@ -1,3 +1,3 @@
-import changePasswdPage from "./pages/changePasswd";
+import unregisterPage from "./pages/unregister";
 
-changePasswdPage();
+unregisterPage();
