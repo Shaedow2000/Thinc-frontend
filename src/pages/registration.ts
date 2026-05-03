@@ -36,10 +36,7 @@ const registrationPage: Function = (): void => {
   registerForm.addEventListener(
     "submit",
     async (e: SubmitEvent): Promise<void> => {
-      console.log("clicked");
       e.preventDefault();
-
-      console.log("DATA:", new FormData(registerForm));
 
       let response = await fetch("http://localhost:8080/auth/register", {
         method: "POST",
@@ -48,7 +45,6 @@ const registrationPage: Function = (): void => {
       });
 
       const result = await response.json();
-      console.log("RESULT:", result);
     },
   );
 };

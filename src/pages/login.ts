@@ -39,7 +39,6 @@ const loginPage: Function = (): void => {
       });
 
       let result = await response.json();
-      console.log(result);
     },
   );
 };
