@@ -230,6 +230,15 @@ body {
 .center-form {
   @apply flex flex-col items-center gap-3xl w-full;
 }
+.center-form > div {
+  @apply flex flex-col items-center gap-xs;
+}
+.center-form p {
+  @apply text-caption text-text text-center font-normal;
+}
+.center-form .small-link {
+  @apply w-full text-dark-white text-caption text-left underline;
+}
 .form {
   @apply flex flex-col items-center gap-lg px-lg py-sm w-full h-fit;
 }
