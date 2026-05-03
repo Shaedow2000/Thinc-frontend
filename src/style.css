@@ -250,3 +250,12 @@ body {
     @apply -translate-y-1 bg-text shadow-uniform;
   }
 }
+
+/* Active transitions */
+/* Buttons */
+.button-main:active,
+.button-main-icon:active,
+.secondary-button:active,
+.secondary-button-icon:active {
+  @apply translate-y-1 shadow-none;
+}
