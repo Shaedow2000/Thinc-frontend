@@ -11,9 +11,9 @@ const unregisterPage: Function = (): void => {
 
   app.innerHTML = /* html */ `
     ${headerButtons}
-    ${pageTitle("Register")}
+    ${pageTitle("Unregister")}
     <div class="center-form">
-      ${heading("Register a new account")}
+      ${heading("Delete your Thinc account")}
       <form class="form" id="unregister-form">
         <div>
           ${label("Email")}
