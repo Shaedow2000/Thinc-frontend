@@ -11,11 +11,7 @@ const unregisterPage: Function = (): void => {
     ${pageTitle("Register")}
     <div class="center-form">
       ${heading("Register a new account")}
-      <form class="form" id="register-form">
-        <div>
-          ${label("Username")}
-          ${input("text", "username", "username")}
-        </div>
+      <form class="form" id="unregister-form">
         <div>
           ${label("Email")}
           ${input("email", "email", "email")}
@@ -32,6 +28,25 @@ const unregisterPage: Function = (): void => {
       </form> 
     </div>
   `;
+
+  const unregisterForm = document.getElementById(
+    "unregister-form",
+  ) as HTMLFormElement;
+
+  unregisterForm.addEventListener(
+    "submit",
+    async (e: SubmitEvent): Promise<void> => {
+      e.preventDefault();
+
+      let response = await fetch("http://localhost:8080/auth/unregister", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(unregisterForm))),
+      });
+
+      const result = await response.json();
+    },
+  );
 };
 
 export default unregisterPage;
