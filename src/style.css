@@ -2,8 +2,8 @@
 
 @theme {
   /* colors */
-  --color-primary: #3c56d8;
-  --color-primary-hover: #1d3bcf;
+  --color-primary: #4863e8;
+  --color-primary-hover: #2f48c3;
   --color-dark-border: #242424;
   --color-background: #2a2a2a;
   --color-links: #03005b;
@@ -169,7 +169,7 @@ body {
   @apply w-full h-fit py-24 flex justify-between items-center gap-md;
 }
 .quote p {
-  @apply font-semibold text-lg text-left text-text text-shadow-uniform;
+  @apply w-fit h-fit font-semibold text-lg text-left text-text text-shadow-uniform;
 }
 
 /* Greeting styles */
