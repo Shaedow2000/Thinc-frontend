@@ -29,6 +29,27 @@ const accountVerificationPage: Function = (): void => {
       </form> 
     </div>
   `;
+
+  const verificationForm = document.getElementById(
+    "account-verification-form",
+  ) as HTMLFormElement;
+
+  verificationForm.addEventListener(
+    "submit",
+    async (e: SubmitEvent): Promise<void> => {
+      e.preventDefault();
+
+      let response = await fetch("http://localhost:8080/auth/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(
+          Object.fromEntries(new FormData(verificationForm)),
+        ),
+      });
+
+      let result = await response.json();
+    },
+  );
 };
 
 export default accountVerificationPage;
