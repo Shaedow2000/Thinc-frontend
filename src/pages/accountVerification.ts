@@ -1,10 +1,13 @@
 import { mainButton } from "../assets/components/buttons";
+import { footer } from "../assets/components/footer";
 import { headerButtons } from "../assets/components/header";
 import { input } from "../assets/components/input";
 import { heading, label, pageTitle } from "../assets/components/text";
 
 const accountVerificationPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLFormElement;
+
+  app.style.height = "100vh";
 
   app.innerHTML = /* html */ `
     ${headerButtons}
@@ -28,6 +31,8 @@ const accountVerificationPage: Function = (): void => {
         ${mainButton("Verify")}
       </form> 
     </div>
+    <div class="h"></div>
+    ${footer}
   `;
 
   const verificationForm = document.getElementById(
