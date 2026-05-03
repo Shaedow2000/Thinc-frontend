@@ -83,19 +83,11 @@ body {
 .button-main-icon {
   @apply px-caption py-3 rounded-lg bg-primary font-medium text-text text-md;
 }
-.button-main:hover,
-.button-main-icon:hover {
-  @apply bg-primary-hover -translate-y-1 shadow-uniform;
-}
 
 /* secondary button */
 .secondary-button,
 .secondary-button-icon {
   @apply px-caption py-3 rounded-lg ring-2 ring-inset ring-primary font-light text-text text-md;
-}
-.secondary-button:hover,
-.secondary-button-icon:hover {
-  @apply ring-primary-hover -translate-y-1 shadow-uniform;
 }
 
 /* Buttons with icon */
@@ -108,7 +100,6 @@ body {
 .input {
   @apply w-full h-fit p-sm font-medium text-md text-background bg-dark-white border-2 border-dark-border rounded-lg;
 }
-.input:hover,
 .input:focus {
   @apply -translate-y-1 bg-text shadow-uniform;
 }
@@ -229,4 +220,20 @@ body {
 }
 .textarea textarea {
   @apply -mx-md w-screen bg-dark-border h-full py-md px-md md:px-4xl;
+}
+
+@media (hover: hover) {
+  .button-main:hover,
+  .button-main-icon:hover {
+    @apply bg-primary-hover -translate-y-1 shadow-uniform;
+  }
+
+  .secondary-button:hover,
+  .secondary-button-icon:hover {
+    @apply ring-primary-hover -translate-y-1 shadow-uniform;
+  }
+
+  .input:hover {
+    @apply -translate-y-1 bg-text shadow-uniform;
+  }
 }
