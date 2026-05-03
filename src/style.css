@@ -222,6 +222,15 @@ body {
   @apply -mx-md w-screen bg-dark-border h-full py-md px-md md:px-4xl;
 }
 
+/* Form styles */
+.form {
+  @apply flex flex-col items-center gap-lg px-lg py-sm w-full h-fit;
+}
+.form div {
+  @apply w-full;
+}
+
+/* hover styles */
 @media (hover: hover) {
   .button-main:hover,
   .button-main-icon:hover {

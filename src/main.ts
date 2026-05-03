@@ -1,3 +1,3 @@
-import landing from "./pages/landingPage";
+import registrationPage from "./pages/registration";
 
-landing();
+registrationPage();

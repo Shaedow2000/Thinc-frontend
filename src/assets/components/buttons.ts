@@ -1,8 +1,8 @@
 const mainButton: Function = (text: string): string =>
-  `<button type="button" class="button-main">${text}</button>`;
+  `<button class="button-main">${text}</button>`;
 
 const secondaryButton: Function = (text: string): string =>
-  `<button type="button" class="secondary-button">${text}</button>`;
+  `<button class="secondary-button">${text}</button>`;
 
 const mainButtonIcon: Function = (text: string, icon: string): string =>
   `<button type="button" class="button-main-icon">
