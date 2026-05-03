@@ -38,6 +38,10 @@
   --text-shadow-uniform: 0 4px 4px black;
 }
 
+* {
+  @apply transition-all duration-200;
+}
+
 body {
   @apply absolute top-0 bg-background;
 }
