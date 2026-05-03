@@ -23,6 +23,25 @@ const passwdRecoveryPage: Function = (): void => {
       </form> 
     </div>
   `;
+
+  const recoveryForm = document.getElementById(
+    "recovery-form",
+  ) as HTMLFormElement;
+
+  recoveryForm.addEventListener(
+    "submit",
+    async (e: SubmitEvent): Promise<void> => {
+      e.preventDefault();
+
+      let response = await fetch("http://localhost:8080/auth/password_reset", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(recoveryForm))),
+      });
+
+      let result = await response.json();
+    },
+  );
 };
 
 export default passwdRecoveryPage;
