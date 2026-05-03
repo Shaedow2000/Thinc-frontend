@@ -33,11 +33,14 @@ const passwdRecoveryPage: Function = (): void => {
     async (e: SubmitEvent): Promise<void> => {
       e.preventDefault();
 
-      let response = await fetch("http://localhost:8080/auth/password_reset", {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(recoveryForm))),
-      });
+      let response = await fetch(
+        "http://localhost:8080/auth/reset_verification",
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(Object.fromEntries(new FormData(recoveryForm))),
+        },
+      );
 
       let result = await response.json();
     },
