@@ -9,8 +9,8 @@ const forDevsSection: string = /* html */ `
       You can find the code to the app freely available on Github, just go
       to:
     </p>
-    ${mainButtonIcon("Thinc Backend code (API)", "Code")}
-    ${mainButtonIcon("Thinc Frontend code", "Code")}
+    ${mainButtonIcon("Thinc Backend code (API)", "Code", "https://github.com/Shaedow2000/Thinc-API")}
+    ${mainButtonIcon("Thinc Frontend code", "Code", "https://github.com/Shaedow2000/Thinc-frontend")}
   </section>
 `;
 
