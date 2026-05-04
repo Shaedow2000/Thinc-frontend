@@ -41,7 +41,7 @@ const deleteConfirmationPage: Function = (): void => {
   ) as HTMLFormElement;
 
   document.getElementById("abort")!.addEventListener("click", (): void => {
-    location.href = "/dashboard";
+    location.href = "/";
   });
 
   confirmationForm.addEventListener(

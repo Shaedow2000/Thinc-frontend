@@ -37,7 +37,7 @@ const unregisterPage: Function = (): void => {
   ) as HTMLFormElement;
 
   document.getElementById("abort")!.addEventListener("click", (): void => {
-    location.href = "/dashboard";
+    location.href = "/unregister_confirmation";
   });
 
   unregisterForm.addEventListener(
