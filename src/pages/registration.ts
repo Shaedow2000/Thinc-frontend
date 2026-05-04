@@ -53,13 +53,14 @@ const registrationPage: Function = (): void => {
       const result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        // location.href = "/verify";
+        location.href = "/verify";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 
         document.getElementById("username-err")!.innerHTML = "";
         document.getElementById("email-err")!.innerHTML = "";
         document.getElementById("password-err")!.innerHTML = "";
+        document.getElementById("error-message")!.innerHTML = "";
 
         for (let i: number = 0; i < message.length; i++) {
           message[i] =
