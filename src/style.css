@@ -43,7 +43,7 @@
 }
 
 body {
-  @apply absolute top-0 bg-background;
+  @apply w-screen h-fit bg-background;
 }
 
 #app {
