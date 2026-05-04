@@ -3,19 +3,19 @@ import { headerButtons } from "../assets/components/header";
 import { input } from "../assets/components/input";
 import { heading, label, pageTitle } from "../assets/components/text";
 
-const deleteConfirmationPage: Function = (): void => {
+const resetConfirmationPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
   app.style.height = "100vh";
 
   app.innerHTML = /* html */ `
     ${headerButtons}
-    ${pageTitle("Confirmation")}
+    ${pageTitle("Reset confirmation")}
     <div class="center-form">
       <div>
-        ${heading("Confirm deleting the account")}
+        ${heading("Reset account confirmation")}
         <p>We’ve sent you a confirmation code.</p>
-        <p>Please fill the following to delete the account.</p>
+        <p>Please fill the following to reset the account.</p>
       </div>
       <form class="form" id="confirmation-form">
         <div>
@@ -57,4 +57,4 @@ const deleteConfirmationPage: Function = (): void => {
   );
 };
 
-export default deleteConfirmationPage;
+export default resetConfirmationPage;
