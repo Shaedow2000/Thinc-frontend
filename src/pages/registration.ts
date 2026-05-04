@@ -29,6 +29,7 @@ const registrationPage: Function = (): void => {
           ${input("password", "password", "password")}
           <span class="err-message" id="password-err"></span>
         </div>
+        <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         ${mainButton("Register")}
       </form> 
     </div>
@@ -52,17 +53,19 @@ const registrationPage: Function = (): void => {
       const result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.href = "/verify";
+        // location.href = "/verify";
       } else {
         let message: string[] = result.message.split(/[:,]/);
+
+        document.getElementById("username-err")!.innerHTML = "";
+        document.getElementById("email-err")!.innerHTML = "";
+        document.getElementById("password-err")!.innerHTML = "";
 
         for (let i: number = 0; i < message.length; i++) {
           message[i] =
             message[i][0] === " "
               ? message[i].split("").splice(1, message[i].length).join("")
               : message[i];
-
-          console.log(message[i]);
 
           if (message[i] === "username")
             document.getElementById("username-err")!.innerHTML = message[i + 1];
@@ -73,6 +76,14 @@ const registrationPage: Function = (): void => {
           if (message[i] === "password")
             document.getElementById("password-err")!.innerHTML = message[i + 1];
         }
+
+        if (
+          !message.includes("username") &&
+          !message.includes("email") &&
+          !message.includes("password")
+        )
+          document.getElementById("error-message")!.innerHTML =
+            message.join("");
       }
     },
   );
