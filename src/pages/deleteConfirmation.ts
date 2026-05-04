@@ -36,7 +36,7 @@ const deleteConfirmationPage: Function = (): void => {
   `;
 
   const confirmationForm = document.getElementById(
-    "confirmaition-form",
+    "confirmation-form",
   ) as HTMLFormElement;
 
   confirmationForm.addEventListener(
