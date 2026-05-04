@@ -4,4 +4,5 @@ import { linkButtons } from "./utils/clickEvent";
 
 clientRouter();
 linkButtons();
-document.body.innerHTML += footer;
+
+document.body.insertAdjacentHTML("beforeend", footer);
