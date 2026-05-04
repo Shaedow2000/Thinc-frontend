@@ -38,7 +38,7 @@ const changePasswdPage: Function = (): void => {
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         <section class="flex items-center gap-md">
           ${mainButton("Change")}
-          ${secondaryButton("Abort")}
+          ${secondaryButton("Abort", "abort")}
         </section>
       </form> 
     </div>
@@ -54,6 +54,10 @@ const changePasswdPage: Function = (): void => {
   ) {
     document.getElementById("other")!.innerHTML = "Passwords don't match";
   } else {
+    document.getElementById("abort")!.addEventListener("click", (): void => {
+      location.href = "/dashboard";
+    });
+
     changePasswdForm.addEventListener(
       "submit",
       async (e: SubmitEvent): Promise<void> => {

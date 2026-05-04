@@ -30,7 +30,7 @@ const resetConfirmationPage: Function = (): void => {
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         <section class="flex items-center gap-md">
           ${mainButton("Confirm")}
-          ${secondaryButton("Abort")}
+          ${secondaryButton("Abort", "abort")}
         </section>
       </form>
     </div>
@@ -39,6 +39,10 @@ const resetConfirmationPage: Function = (): void => {
   const confirmationForm = document.getElementById(
     "confirmation-form",
   ) as HTMLFormElement;
+
+  document.getElementById("abort")!.addEventListener("click", (): void => {
+    location.href = "/dashboard";
+  });
 
   confirmationForm.addEventListener(
     "submit",

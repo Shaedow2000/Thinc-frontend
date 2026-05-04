@@ -26,7 +26,7 @@ const unregisterPage: Function = (): void => {
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         <section class="flex items-center gap-md">
           ${mainButton("Unregister")}
-          ${secondaryButton("Abort")}
+          ${secondaryButton("Abort", "abort")}
         </section>
       </form> 
     </div>
@@ -35,6 +35,10 @@ const unregisterPage: Function = (): void => {
   const unregisterForm = document.getElementById(
     "unregister-form",
   ) as HTMLFormElement;
+
+  document.getElementById("abort")!.addEventListener("click", (): void => {
+    location.href = "/dashboard";
+  });
 
   unregisterForm.addEventListener(
     "submit",
