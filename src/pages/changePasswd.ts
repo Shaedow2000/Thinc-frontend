@@ -96,6 +96,10 @@ const changePasswdPage: Function = (): void => {
               document.getElementById("password-err")!.innerHTML =
                 message[i + 1];
           }
+
+          if (!message.includes("email") && !message.includes("password"))
+            document.getElementById("error-message")!.innerHTML =
+              message.join("");
         }
       },
     );
