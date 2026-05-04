@@ -17,10 +17,12 @@ const loginPage: Function = (): void => {
         <div>
           ${label("Email")}
           ${input("email", "email", "email")}
+          <span class="err-message" id="email-err"></span>
         </div>
          <div>
           ${label("Password")}
           ${input("password", "password", "password")}
+          <span class="err-message" id="password-err"></span>
         </div>
         <a class="small-link">Forgot password?</a>
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
