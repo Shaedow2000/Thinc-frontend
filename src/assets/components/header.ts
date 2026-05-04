@@ -24,4 +24,23 @@ const headerButtons: string = /* html */ `
   </header>
 `;
 
-export { headerSvgs, headerButtons };
+const header: string = /* html */ `
+  <header class="header">
+    <div>
+      <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
+    </div>
+  </header>
+`;
+
+const headerOneButton: Function = (name: string): string => `
+  <header class="header">
+    <div>
+      <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
+      <div>
+        ${secondaryButton(name)}
+      </div>
+    </div>
+  </header>
+`;
+
+export { headerSvgs, headerButtons, headerOneButton, header };
