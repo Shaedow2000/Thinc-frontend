@@ -1,3 +1,3 @@
-import unregisterPage from "./pages/unregister";
+import deleteConfirmationPage from "./pages/deleteConfirmation";
 
-unregisterPage();
+deleteConfirmationPage();
