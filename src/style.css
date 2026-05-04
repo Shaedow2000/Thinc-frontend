@@ -246,9 +246,9 @@ body {
   @apply w-full;
 }
 
-/* holder */
-.h {
-  @apply w-full h-full;
+/* Error message */
+.err-message {
+  @apply text-red-500 font-medium text-left text-caption;
 }
 
 /* hover styles */
