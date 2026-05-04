@@ -1,5 +1,5 @@
 import { mainButton } from "../assets/components/buttons";
-import { headerButtons } from "../assets/components/header";
+import { headerOneButton } from "../assets/components/header";
 import { input } from "../assets/components/input";
 import { heading, label, pageTitle } from "../assets/components/text";
 
@@ -9,7 +9,7 @@ const loginPage: Function = (): void => {
   app.style.height = "100vh";
 
   app.innerHTML = /* html */ `
-    ${headerButtons}
+    ${headerOneButton("Register")}
     ${pageTitle("Login")}
     <div class="center-form">
       ${heading("Login by an existing account")}

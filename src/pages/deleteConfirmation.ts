@@ -1,5 +1,5 @@
 import { mainButton, secondaryButton } from "../assets/components/buttons";
-import { headerButtons } from "../assets/components/header";
+import { header } from "../assets/components/header";
 import { input } from "../assets/components/input";
 import { heading, label, pageTitle } from "../assets/components/text";
 
@@ -9,7 +9,7 @@ const deleteConfirmationPage: Function = (): void => {
   app.style.height = "100vh";
 
   app.innerHTML = /* html */ `
-    ${headerButtons}
+    ${header}
     ${pageTitle("Confirmation")}
     <div class="center-form">
       <div>
