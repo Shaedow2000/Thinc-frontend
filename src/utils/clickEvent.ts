@@ -1,6 +1,6 @@
-function linkButtons(id: string, href: string): void {
+function linkButtons(id: string, pathname: string): void {
   document.getElementById(id)!.addEventListener("click", (): void => {
-    location.href = href;
+    location.pathname = pathname;
   });
 }
 

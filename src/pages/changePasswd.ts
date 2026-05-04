@@ -55,7 +55,7 @@ const changePasswdPage: Function = (): void => {
     document.getElementById("other")!.innerHTML = "Passwords don't match";
   } else {
     document.getElementById("abort")!.addEventListener("click", (): void => {
-      location.href = "/dashboard";
+      location.pathname = "/dashboard";
     });
 
     changePasswdForm.addEventListener(
@@ -77,7 +77,7 @@ const changePasswdPage: Function = (): void => {
         let result = await response.json();
 
         if (Number(String(result.status)[0]) === 2) {
-          location.href = "/dashboard";
+          location.pathname = "/dashboard";
         } else {
           let message: string[] = result.message.split(/[:,]/);
 

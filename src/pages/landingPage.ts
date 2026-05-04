@@ -6,6 +6,7 @@ import { hero } from "../assets/components/hero";
 import { quote } from "../assets/components/quote";
 import { registerLoginSection } from "../assets/components/registerLoginSection";
 import { heading } from "../assets/components/text";
+import { linkButtons } from "../utils/clickEvent";
 
 const landing: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
@@ -35,7 +36,7 @@ const landing: Function = (): void => {
   ];
 
   app.innerHTML = /* html */ `
-    ${headerButtons}  
+    ${headerButtons}
     ${hero}
     ${border}
     ${quote}
@@ -47,6 +48,9 @@ const landing: Function = (): void => {
     ${border}
     ${forDevsSection}
   `;
+
+  linkButtons("register-button", "/register");
+  linkButtons("login-button", "/login");
 };
 
 export default landing;

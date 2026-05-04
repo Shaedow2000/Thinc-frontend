@@ -56,7 +56,7 @@ const registrationPage: Function = (): void => {
       const result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.href = "/verify";
+        location.pathname = "/verify";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 

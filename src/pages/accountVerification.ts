@@ -55,7 +55,7 @@ const accountVerificationPage: Function = (): void => {
       let result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.href = "/dashboard";
+        location.pathname = "/dashboard";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 

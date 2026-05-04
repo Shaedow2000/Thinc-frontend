@@ -41,7 +41,7 @@ const deleteConfirmationPage: Function = (): void => {
   ) as HTMLFormElement;
 
   document.getElementById("abort")!.addEventListener("click", (): void => {
-    location.href = "/";
+    location.pathname = "/";
   });
 
   confirmationForm.addEventListener(
@@ -60,7 +60,7 @@ const deleteConfirmationPage: Function = (): void => {
       let result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.href = "/";
+        location.pathname = "/";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 

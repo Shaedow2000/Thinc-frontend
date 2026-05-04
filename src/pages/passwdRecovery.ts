@@ -48,7 +48,7 @@ const passwdRecoveryPage: Function = (): void => {
       let result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.href = "/change_passwd";
+        location.pathname = "/change_passwd";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 

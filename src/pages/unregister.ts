@@ -37,7 +37,7 @@ const unregisterPage: Function = (): void => {
   ) as HTMLFormElement;
 
   document.getElementById("abort")!.addEventListener("click", (): void => {
-    location.href = "/unregister_confirmation";
+    location.pathname = "/unregister_confirmation";
   });
 
   unregisterForm.addEventListener(
@@ -54,7 +54,7 @@ const unregisterPage: Function = (): void => {
       const result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.href = "/";
+        location.pathname = "/";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 
