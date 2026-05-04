@@ -17,7 +17,7 @@ const deleteConfirmationPage: Function = (): void => {
         <p>We’ve sent you a confirmation code.</p>
         <p>Please fill the following to delete the account.</p>
       </div>
-      <form class="form" id="login-form">
+      <form class="form" id="confirmation-form">
         <div>
           ${label("Email")}
           ${input("email", "email", "email")}
@@ -34,6 +34,27 @@ const deleteConfirmationPage: Function = (): void => {
       </form>
     </div>
   `;
+
+  const confirmationForm = document.getElementById(
+    "confirmaition-form",
+  ) as HTMLFormElement;
+
+  confirmationForm.addEventListener(
+    "submit",
+    async (e: SubmitEvent): Promise<void> => {
+      e.preventDefault();
+
+      let response = await fetch("http://localhost:8080/auth/confirmation", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(
+          Object.fromEntries(new FormData(confirmationForm)),
+        ),
+      });
+
+      let result = await response.json();
+    },
+  );
 };
 
 export default deleteConfirmationPage;
