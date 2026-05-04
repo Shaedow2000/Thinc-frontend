@@ -29,7 +29,6 @@ const registrationPage: Function = (): void => {
           ${input("password", "password", "password")}
           <span class="err-message" id="password-err"></span>
         </div>
-        <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         ${mainButton("Register")}
       </form> 
     </div>
@@ -52,7 +51,7 @@ const registrationPage: Function = (): void => {
 
       const result = await response.json();
 
-      if (result.status === 202) {
+      if (Number(String(result.status)[0]) === 2) {
         location.href = "/verify";
       } else {
         let message: string[] = result.message.split(/[:,]/);
