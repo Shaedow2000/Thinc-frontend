@@ -1,5 +1,4 @@
 import { mainButton, secondaryButton } from "../assets/components/buttons";
-import { footer } from "../assets/components/footer";
 import { headerButtons } from "../assets/components/header";
 import { input } from "../assets/components/input";
 import { heading, label, pageTitle } from "../assets/components/text";
@@ -40,8 +39,6 @@ const changePasswdPage: Function = (): void => {
         </section>
       </form> 
     </div>
-    <div class="h"></div>
-    ${footer}
   `;
 
   const changePasswdForm = document.getElementById(

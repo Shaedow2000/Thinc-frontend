@@ -1,6 +1,5 @@
 import { border } from "../assets/components/border";
 import { cardsSection } from "../assets/components/cardsSection";
-import { footer } from "../assets/components/footer";
 import { forDevsSection } from "../assets/components/forDevs";
 import { headerButtons } from "../assets/components/header";
 import { hero } from "../assets/components/hero";
@@ -47,8 +46,6 @@ const landing: Function = (): void => {
     ${registerLoginSection}
     ${border}
     ${forDevsSection}
-    <div class="w-full h-fit py-lg"></div>
-    ${footer}
   `;
 };
 
