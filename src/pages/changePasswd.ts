@@ -83,7 +83,9 @@ const changePasswdPage: Function = (): void => {
                 ? message[i].split("").splice(1, message[i].length).join("")
                 : message[i];
 
-            console.log(message[i]);
+            document.getElementById("email-err")!.innerHTML = "";
+            document.getElementById("password-err")!.innerHTML = "";
+            document.getElementById("error-message")!.innerHTML = "";
 
             if (message[i] === "email")
               document.getElementById("email-err")!.innerHTML = message[i + 1];

@@ -21,6 +21,7 @@ const passwdRecoveryPage: Function = (): void => {
           ${label("Email")}
           ${input("email", "email", "email")}
         </div>
+        <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         ${mainButton("Send")}
       </form> 
     </div>
@@ -45,6 +46,29 @@ const passwdRecoveryPage: Function = (): void => {
       );
 
       let result = await response.json();
+
+      if (Number(String(result.status)[0]) === 2) {
+        location.href = "/change_passwd";
+      } else {
+        let message: string[] = result.message.split(/[:,]/);
+
+        document.getElementById("email-err")!.innerHTML = "";
+        document.getElementById("error-message")!.innerHTML = "";
+
+        for (let i: number = 0; i < message.length; i++) {
+          message[i] =
+            message[i][0] === " "
+              ? message[i].split("").splice(1, message[i].length).join("")
+              : message[i];
+
+          if (message[i] === "email")
+            document.getElementById("email-err")!.innerHTML = message[i + 1];
+        }
+
+        if (!message.includes("email"))
+          document.getElementById("error-message")!.innerHTML =
+            message.join("");
+      }
     },
   );
 };

@@ -59,6 +59,9 @@ const accountVerificationPage: Function = (): void => {
       } else {
         let message: string[] = result.message.split(/[:,]/);
 
+        document.getElementById("email-err")!.innerHTML = "";
+        document.getElementById("error-message")!.innerHTML = "";
+
         for (let i: number = 0; i < message.length; i++) {
           message[i] =
             message[i][0] === " "

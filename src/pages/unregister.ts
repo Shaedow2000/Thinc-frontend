@@ -23,6 +23,7 @@ const unregisterPage: Function = (): void => {
           ${input("password", "password", "password")}
         </div>
         <a class="small-link">Forgot passwrod?</a>
+        <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         <section class="flex items-center gap-md">
           ${mainButton("Unregister")}
           ${secondaryButton("Abort")}
@@ -47,6 +48,33 @@ const unregisterPage: Function = (): void => {
       });
 
       const result = await response.json();
+
+      if (Number(String(result.status)[0]) === 2) {
+        location.href = "/dashboard";
+      } else {
+        let message: string[] = result.message.split(/[:,]/);
+
+        document.getElementById("email-err")!.innerHTML = "";
+        document.getElementById("password-err")!.innerHTML = "";
+        document.getElementById("error-message")!.innerHTML = "";
+
+        for (let i: number = 0; i < message.length; i++) {
+          message[i] =
+            message[i][0] === " "
+              ? message[i].split("").splice(1, message[i].length).join("")
+              : message[i];
+
+          if (message[i] === "email")
+            document.getElementById("email-err")!.innerHTML = message[i + 1];
+
+          if (message[i] === "password")
+            document.getElementById("password-err")!.innerHTML = message[i + 1];
+        }
+
+        if (!message.includes("email") && !message.includes("password"))
+          document.getElementById("error-message")!.innerHTML =
+            message.join("");
+      }
     },
   );
 };
