@@ -1,6 +1,4 @@
 import { footer } from "./assets/components/footer";
-import deleteConfirmationPage from "./pages/deleteConfirmation";
-
+import registrationPage from "./pages/registration";
 document.body.innerHTML += footer;
-
-deleteConfirmationPage();
+registrationPage();

@@ -1,18 +1,29 @@
-const mainButton: Function = (text: string): string =>
-  `<button class="button-main">${text}</button>`;
+const mainButton: Function = (text: string, id: string | null = null): string =>
+  `<button class="button-main" ${id !== null ? "id='" + id + "'" : ""}>${text}</button>`;
 
-const secondaryButton: Function = (text: string): string =>
-  `<button class="secondary-button">${text}</button>`;
+const secondaryButton: Function = (
+  text: string,
+  id: string | null = null,
+): string =>
+  `<button class="secondary-button" ${id !== null ? "id='" + id + "'" : ""}>${text}</button>`;
 
-const mainButtonIcon: Function = (text: string, icon: string): string =>
-  `<button type="button" class="button-main-icon">
+const mainButtonIcon: Function = (
+  text: string,
+  icon: string,
+  id: string | null = null,
+): string =>
+  `<button class="button-main-icon" ${id !== null ? "id='" + id + "'" : ""}>
     <img src="src/assets/SVG/${icon}.svg" alt="${icon}" />
     ${text}
   </button>
 `;
 
-const secondaryButtonIcon: Function = (text: string, icon: string): string =>
-  `<button type="button" class="secondary-button-icon">
+const secondaryButtonIcon: Function = (
+  text: string,
+  icon: string,
+  id: string | null = null,
+): string =>
+  `<button class="secondary-button-icon" ${id !== null ? "id='" + id + "'" : ""}>
     <img src="src/assets/SVG/${icon}.svg" alt="${icon}" />
     ${text}
   </button>`;
