@@ -1,18 +1,21 @@
-const mainButton: Function = (text: string, id: string | null = null): string =>
-  `<button class="button-main" ${id !== null ? "id='" + id + "'" : ""}>${text}</button>`;
+const mainButton: Function = (
+  text: string,
+  href: string | null = null,
+): string =>
+  `<button class="button-main" ${href !== null ? "data-href='" + href + "'" : ""}>${text}</button>`;
 
 const secondaryButton: Function = (
   text: string,
-  id: string | null = null,
+  href: string | null = null,
 ): string =>
-  `<button class="secondary-button" ${id !== null ? "id='" + id + "'" : ""}>${text}</button>`;
+  `<button class="secondary-button" ${href !== null ? "data-href='" + href + "'" : ""}>${text}</button>`;
 
 const mainButtonIcon: Function = (
   text: string,
   icon: string,
-  id: string | null = null,
+  href: string | null = null,
 ): string =>
-  `<button class="button-main-icon" ${id !== null ? "id='" + id + "'" : ""}>
+  `<button class="button-main-icon" ${href !== null ? "data-href='" + href + "'" : ""}>
     <img src="src/assets/SVG/${icon}.svg" alt="${icon}" />
     ${text}
   </button>
@@ -21,9 +24,9 @@ const mainButtonIcon: Function = (
 const secondaryButtonIcon: Function = (
   text: string,
   icon: string,
-  id: string | null = null,
+  href: string | null = null,
 ): string =>
-  `<button class="secondary-button-icon" ${id !== null ? "id='" + id + "'" : ""}>
+  `<button class="secondary-button-icon" ${href !== null ? "data-href='" + href + "'" : ""}>
     <img src="src/assets/SVG/${icon}.svg" alt="${icon}" />
     ${text}
   </button>`;
