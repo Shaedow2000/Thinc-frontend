@@ -73,7 +73,7 @@ const changePasswdPage: Function = (): void => {
         let result = await response.json();
 
         if (Number(String(result.status)[0]) === 2) {
-          location.href = "/verify";
+          location.href = "/dashboard";
         } else {
           let message: string[] = result.message.split(/[:,]/);
 

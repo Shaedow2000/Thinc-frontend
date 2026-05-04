@@ -50,7 +50,7 @@ const unregisterPage: Function = (): void => {
       const result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.href = "/dashboard";
+        location.href = "/";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 
