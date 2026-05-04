@@ -17,8 +17,8 @@ const headerButtons: string = /* html */ `
     <div>
       <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
       <div>
-        ${secondaryButton("Login")}
-        ${mainButton("Register")}
+        ${secondaryButton("Login", "login-button")}
+        ${mainButton("Register", "register-button")}
       </div>
     </div>
   </header>
@@ -37,7 +37,7 @@ const headerOneButton: Function = (name: string): string => `
     <div>
       <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
       <div>
-        ${secondaryButton(name)}
+        ${secondaryButton(name, name.toLowerCase() + "-button")}
       </div>
     </div>
   </header>

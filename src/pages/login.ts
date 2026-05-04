@@ -2,6 +2,7 @@ import { mainButton } from "../assets/components/buttons";
 import { headerOneButton } from "../assets/components/header";
 import { input } from "../assets/components/input";
 import { heading, label, pageTitle } from "../assets/components/text";
+import { linkButtons } from "../utils/clickEvent";
 
 const loginPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
@@ -28,6 +29,8 @@ const loginPage: Function = (): void => {
       </form>
     </div>
   `;
+
+  linkButtons("register-button", "/register");
 
   const loginForm = document.getElementById("login-form") as HTMLFormElement;
 
