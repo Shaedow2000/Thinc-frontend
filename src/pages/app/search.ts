@@ -3,10 +3,10 @@ import {
   mainButton,
   secondaryButtonIcon,
 } from "../../assets/components/buttons";
-import { cardsSection } from "../../assets/components/cardsSection";
+import { foundNotes } from "../../assets/components/cardsSection";
 import { headerSvgs } from "../../assets/components/header";
 import { input } from "../../assets/components/input";
-import { heading, label, pageTitle } from "../../assets/components/text";
+import { heading, pageTitle } from "../../assets/components/text";
 
 const searchNotePage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
@@ -26,8 +26,7 @@ const searchNotePage: Function = (): void => {
       </div>
     </div>
     ${border}
-    ${label("Notes")}
-    ${cardsSection([])}
+    ${foundNotes([])}
   `;
 };
 

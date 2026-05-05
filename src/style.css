@@ -199,7 +199,7 @@ body {
 
 /* found notes section styles */
 .found-notes {
-  @apply flex flex-col py-lg gap-md;
+  @apply w-full text-center flex flex-col py-lg gap-md;
 }
 
 /* Note text */
