@@ -37,6 +37,7 @@ const changePasswdPage: Function = (): void => {
           ${input("password", "other", "password")}
           <span class="err-message" id="retype-password-err"></span>
         </div>
+        <a href="/password_recovery" class="small-link">Resend code</a>
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         <section class="flex items-center gap-md">
           ${mainButton("Change")}
