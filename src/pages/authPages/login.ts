@@ -1,63 +1,56 @@
-import { mainButton } from "../assets/components/buttons";
-import { headerOneButton } from "../assets/components/header";
-import { input } from "../assets/components/input";
-import { heading, label, pageTitle } from "../assets/components/text";
+import { mainButton } from "../../assets/components/buttons";
+import { headerOneButton } from "../../assets/components/header";
+import { input } from "../../assets/components/input";
+import { heading, label, pageTitle } from "../../assets/components/text";
 
-const registrationPage: Function = (): void => {
+const loginPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
   app.style.height = "100vh";
 
-  app.innerHTML = /* hmtl */ `
-    ${headerOneButton("Login")}
-    ${pageTitle("Register")}
+  app.innerHTML = /* html */ `
+    ${headerOneButton("Register")}
+    ${pageTitle("Login")}
     <div class="center-form">
-      ${heading("Register a new account")}
-      <form class="form" id="register-form">
-        <div>
-          ${label("Username")}
-          ${input("text", "username", "username")}
-          <span class="err-message" id="username-err"></span>
-        </div>
+      ${heading("Login by an existing account")}
+      <form class="form" id="login-form">
         <div>
           ${label("Email")}
           ${input("email", "email", "email")}
           <span class="err-message" id="email-err"></span>
         </div>
-        <div>
+         <div>
           ${label("Password")}
           ${input("password", "password", "password")}
           <span class="err-message" id="password-err"></span>
         </div>
+        <a href="/password_recovery" class="small-link">Forgot password?</a>
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
-        ${mainButton("Register")}
-      </form> 
+        ${mainButton("Login")}
+      </form>
     </div>
   `;
 
-  const registerForm = document.getElementById(
-    "register-form",
-  ) as HTMLFormElement;
+  const loginForm = document.getElementById("login-form") as HTMLFormElement;
 
-  registerForm.addEventListener(
+  loginForm.addEventListener(
     "submit",
     async (e: SubmitEvent): Promise<void> => {
       e.preventDefault();
 
-      let response = await fetch("http://localhost:8080/auth/register", {
+      let response = await fetch("http://localhost:8080/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(registerForm))),
+        body: JSON.stringify(Object.fromEntries(new FormData(loginForm))),
       });
 
-      const result = await response.json();
+      let result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.pathname = "/verify";
+        location.pathname = "/dashboard";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 
-        document.getElementById("username-err")!.innerHTML = "";
         document.getElementById("email-err")!.innerHTML = "";
         document.getElementById("password-err")!.innerHTML = "";
         document.getElementById("error-message")!.innerHTML = "";
@@ -68,9 +61,6 @@ const registrationPage: Function = (): void => {
               ? message[i].split("").splice(1, message[i].length).join("")
               : message[i];
 
-          if (message[i] === "username")
-            document.getElementById("username-err")!.innerHTML = message[i + 1];
-
           if (message[i] === "email")
             document.getElementById("email-err")!.innerHTML = message[i + 1];
 
@@ -78,11 +68,7 @@ const registrationPage: Function = (): void => {
             document.getElementById("password-err")!.innerHTML = message[i + 1];
         }
 
-        if (
-          !message.includes("username") &&
-          !message.includes("email") &&
-          !message.includes("password")
-        )
+        if (!message.includes("email") && !message.includes("password"))
           document.getElementById("error-message")!.innerHTML =
             message.join("");
       }
@@ -90,4 +76,4 @@ const registrationPage: Function = (): void => {
   );
 };
 
-export default registrationPage;
+export default loginPage;

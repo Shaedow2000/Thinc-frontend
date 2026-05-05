@@ -1,37 +1,40 @@
-import { mainButton } from "../assets/components/buttons";
-import { header } from "../assets/components/header";
-import { input } from "../assets/components/input";
-import { heading, label, pageTitle } from "../assets/components/text";
+import { mainButton, secondaryButton } from "../../assets/components/buttons";
+import { header } from "../../assets/components/header";
+import { input } from "../../assets/components/input";
+import { heading, label, pageTitle } from "../../assets/components/text";
 
-const accountVerificationPage: Function = (): void => {
-  const app = document.getElementById("app") as HTMLFormElement;
+const resetConfirmationPage: Function = (): void => {
+  const app = document.getElementById("app") as HTMLDivElement;
 
   app.style.height = "100vh";
 
   app.innerHTML = /* html */ `
     ${header}
-    ${pageTitle("Account verification")}
+    ${pageTitle("Reset confirmation")}
     <div class="center-form">
       <div>
-        ${heading("Verify the account")}
-        <p>We’ve sent you a verification code.</p>
-        <p>Please fill the following to verify the account.</p>
+        ${heading("Reset account confirmation")}
+        <p>We’ve sent you a confirmation code.</p>
+        <p>Please fill the following to reset the account.</p>
       </div>
-      <form class="form" id="account-verification-form">
+      <form class="form" id="confirmation-form">
         <div>
           ${label("Email")}
           ${input("email", "email", "email")}
           <span class="err-message" id="email-err"></span>
         </div>
-        <div>
-          ${label("Verification code")}
+         <div>
+          ${label("Confirmation code")}
           ${input("text", "code", "code")}
           <span class="err-message" id="code-err"></span>
         </div>
-        <a id="resend-verification-code-link" class="small-link">Resend verification code</a>
+        <a id="resend-verification-code-link" class="small-link">Resend confirmation code</a>
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
-        ${mainButton("Verify")}
-      </form> 
+        <section class="flex items-center gap-md">
+          ${mainButton("Confirm")}
+          ${secondaryButton("Abort", "/")}
+        </section>
+      </form>
     </div>
   `;
 
@@ -90,20 +93,20 @@ const accountVerificationPage: Function = (): void => {
     }
   });
 
-  const verificationForm = document.getElementById(
-    "account-verification-form",
+  const confirmationForm = document.getElementById(
+    "confirmation-form",
   ) as HTMLFormElement;
 
-  verificationForm.addEventListener(
+  confirmationForm.addEventListener(
     "submit",
     async (e: SubmitEvent): Promise<void> => {
       e.preventDefault();
 
-      let response = await fetch("http://localhost:8080/auth/verify", {
-        method: "POST",
+      let response = await fetch("http://localhost:8080/auth/confirmation", {
+        method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(
-          Object.fromEntries(new FormData(verificationForm)),
+          Object.fromEntries(new FormData(confirmationForm)),
         ),
       });
 
@@ -135,4 +138,4 @@ const accountVerificationPage: Function = (): void => {
   );
 };
 
-export default accountVerificationPage;
+export default resetConfirmationPage;

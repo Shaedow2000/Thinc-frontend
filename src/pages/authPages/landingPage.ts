@@ -1,11 +1,11 @@
-import { border } from "../assets/components/border";
-import { cardsSection } from "../assets/components/cardsSection";
-import { forDevsSection } from "../assets/components/forDevs";
-import { headerButtons } from "../assets/components/header";
-import { hero } from "../assets/components/hero";
-import { quote } from "../assets/components/quote";
-import { registerLoginSection } from "../assets/components/registerLoginSection";
-import { heading } from "../assets/components/text";
+import { border } from "../../assets/components/border";
+import { cardsSection } from "../../assets/components/cardsSection";
+import { forDevsSection } from "../../assets/components/forDevs";
+import { headerButtons } from "../../assets/components/header";
+import { hero } from "../../assets/components/hero";
+import { quote } from "../../assets/components/quote";
+import { registerLoginSection } from "../../assets/components/registerLoginSection";
+import { heading } from "../../assets/components/text";
 
 const landing: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;

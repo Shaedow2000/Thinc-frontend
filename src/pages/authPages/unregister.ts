@@ -1,53 +1,60 @@
-import { mainButton } from "../assets/components/buttons";
-import { headerOneButton } from "../assets/components/header";
-import { input } from "../assets/components/input";
-import { heading, label, pageTitle } from "../assets/components/text";
+import { mainButton, secondaryButton } from "../../assets/components/buttons";
+import { header } from "../../assets/components/header";
+import { input } from "../../assets/components/input";
+import { heading, label, pageTitle } from "../../assets/components/text";
 
-const loginPage: Function = (): void => {
-  const app = document.getElementById("app") as HTMLDivElement;
+const unregisterPage: Function = (): void => {
+  const app = document.getElementById("app") as HTMLFormElement;
 
   app.style.height = "100vh";
 
   app.innerHTML = /* html */ `
-    ${headerOneButton("Register")}
-    ${pageTitle("Login")}
+    ${header}
+    ${pageTitle("Unregister")}
     <div class="center-form">
-      ${heading("Login by an existing account")}
-      <form class="form" id="login-form">
+      ${heading("Delete your Thinc account")}
+      <form class="form" id="unregister-form">
         <div>
           ${label("Email")}
           ${input("email", "email", "email")}
-          <span class="err-message" id="email-err"></span>
         </div>
-         <div>
+        <div>
           ${label("Password")}
           ${input("password", "password", "password")}
-          <span class="err-message" id="password-err"></span>
         </div>
-        <a href="/password_recovery" class="small-link">Forgot password?</a>
+        <a href="/password_recovery" class="small-link">Forgot passwrod?</a>
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
-        ${mainButton("Login")}
-      </form>
+        <section class="flex items-center gap-md">
+          ${mainButton("Unregister")}
+          ${secondaryButton("Abort", "abort")}
+        </section>
+      </form> 
     </div>
   `;
 
-  const loginForm = document.getElementById("login-form") as HTMLFormElement;
+  const unregisterForm = document.getElementById(
+    "unregister-form",
+  ) as HTMLFormElement;
 
-  loginForm.addEventListener(
+  document.getElementById("abort")!.addEventListener("click", (): void => {
+    location.pathname = "/unregister_confirmation";
+  });
+
+  unregisterForm.addEventListener(
     "submit",
     async (e: SubmitEvent): Promise<void> => {
       e.preventDefault();
 
-      let response = await fetch("http://localhost:8080/auth/login", {
+      let response = await fetch("http://localhost:8080/auth/unregister", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(loginForm))),
+        body: JSON.stringify(Object.fromEntries(new FormData(unregisterForm))),
       });
 
-      let result = await response.json();
+      const result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.pathname = "/dashboard";
+        location.pathname = "/";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 
@@ -76,4 +83,4 @@ const loginPage: Function = (): void => {
   );
 };
 
-export default loginPage;
+export default unregisterPage;

@@ -1,12 +1,12 @@
-import accountVerificationPage from "../pages/accountVerification";
-import changePasswdPage from "../pages/changePasswd";
-import deleteConfirmationPage from "../pages/deleteConfirmation";
-import landing from "../pages/landingPage";
-import loginPage from "../pages/login";
-import passwdRecoveryPage from "../pages/passwdRecovery";
-import registrationPage from "../pages/registration";
-import resetConfirmationPage from "../pages/resetConfirmation";
-import unregisterPage from "../pages/unregister";
+import accountVerificationPage from "../pages/authPages/accountVerification";
+import changePasswdPage from "../pages/authPages/changePasswd";
+import deleteConfirmationPage from "../pages/authPages/deleteConfirmation";
+import landing from "../pages/authPages/landingPage";
+import loginPage from "../pages/authPages/login";
+import passwdRecoveryPage from "../pages/authPages/passwdRecovery";
+import registrationPage from "../pages/authPages/registration";
+import resetConfirmationPage from "../pages/authPages/resetConfirmation";
+import unregisterPage from "../pages/authPages/unregister";
 
 export default function clientRouter(): void {
   const router: Record<string, Function> = {

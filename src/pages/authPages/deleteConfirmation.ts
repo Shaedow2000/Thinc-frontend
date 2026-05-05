@@ -1,21 +1,21 @@
-import { mainButton, secondaryButton } from "../assets/components/buttons";
-import { header } from "../assets/components/header";
-import { input } from "../assets/components/input";
-import { heading, label, pageTitle } from "../assets/components/text";
+import { mainButton, secondaryButton } from "../../assets/components/buttons";
+import { header } from "../../assets/components/header";
+import { input } from "../../assets/components/input";
+import { heading, label, pageTitle } from "../../assets/components/text";
 
-const resetConfirmationPage: Function = (): void => {
+const deleteConfirmationPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
   app.style.height = "100vh";
 
   app.innerHTML = /* html */ `
     ${header}
-    ${pageTitle("Reset confirmation")}
+    ${pageTitle("Confirmation")}
     <div class="center-form">
       <div>
-        ${heading("Reset account confirmation")}
+        ${heading("Confirm deleting the account")}
         <p>We’ve sent you a confirmation code.</p>
-        <p>Please fill the following to reset the account.</p>
+        <p>Please fill the following to delete the account.</p>
       </div>
       <form class="form" id="confirmation-form">
         <div>
@@ -113,7 +113,7 @@ const resetConfirmationPage: Function = (): void => {
       let result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.pathname = "/dashboard";
+        location.pathname = "/";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 
@@ -138,4 +138,4 @@ const resetConfirmationPage: Function = (): void => {
   );
 };
 
-export default resetConfirmationPage;
+export default deleteConfirmationPage;

@@ -1,63 +1,63 @@
-import { mainButton, secondaryButton } from "../assets/components/buttons";
-import { header } from "../assets/components/header";
-import { input } from "../assets/components/input";
-import { heading, label, pageTitle } from "../assets/components/text";
+import { mainButton } from "../../assets/components/buttons";
+import { headerOneButton } from "../../assets/components/header";
+import { input } from "../../assets/components/input";
+import { heading, label, pageTitle } from "../../assets/components/text";
 
-const unregisterPage: Function = (): void => {
-  const app = document.getElementById("app") as HTMLFormElement;
+const registrationPage: Function = (): void => {
+  const app = document.getElementById("app") as HTMLDivElement;
 
   app.style.height = "100vh";
 
-  app.innerHTML = /* html */ `
-    ${header}
-    ${pageTitle("Unregister")}
+  app.innerHTML = /* hmtl */ `
+    ${headerOneButton("Login")}
+    ${pageTitle("Register")}
     <div class="center-form">
-      ${heading("Delete your Thinc account")}
-      <form class="form" id="unregister-form">
+      ${heading("Register a new account")}
+      <form class="form" id="register-form">
+        <div>
+          ${label("Username")}
+          ${input("text", "username", "username")}
+          <span class="err-message" id="username-err"></span>
+        </div>
         <div>
           ${label("Email")}
           ${input("email", "email", "email")}
+          <span class="err-message" id="email-err"></span>
         </div>
         <div>
           ${label("Password")}
           ${input("password", "password", "password")}
+          <span class="err-message" id="password-err"></span>
         </div>
-        <a href="/password_recovery" class="small-link">Forgot passwrod?</a>
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
-        <section class="flex items-center gap-md">
-          ${mainButton("Unregister")}
-          ${secondaryButton("Abort", "abort")}
-        </section>
+        ${mainButton("Register")}
       </form> 
     </div>
   `;
 
-  const unregisterForm = document.getElementById(
-    "unregister-form",
+  const registerForm = document.getElementById(
+    "register-form",
   ) as HTMLFormElement;
 
-  document.getElementById("abort")!.addEventListener("click", (): void => {
-    location.pathname = "/unregister_confirmation";
-  });
-
-  unregisterForm.addEventListener(
+  registerForm.addEventListener(
     "submit",
     async (e: SubmitEvent): Promise<void> => {
       e.preventDefault();
 
-      let response = await fetch("http://localhost:8080/auth/unregister", {
+      let response = await fetch("http://localhost:8080/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(unregisterForm))),
+        body: JSON.stringify(Object.fromEntries(new FormData(registerForm))),
       });
 
       const result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.pathname = "/";
+        location.pathname = "/verify";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 
+        document.getElementById("username-err")!.innerHTML = "";
         document.getElementById("email-err")!.innerHTML = "";
         document.getElementById("password-err")!.innerHTML = "";
         document.getElementById("error-message")!.innerHTML = "";
@@ -68,6 +68,9 @@ const unregisterPage: Function = (): void => {
               ? message[i].split("").splice(1, message[i].length).join("")
               : message[i];
 
+          if (message[i] === "username")
+            document.getElementById("username-err")!.innerHTML = message[i + 1];
+
           if (message[i] === "email")
             document.getElementById("email-err")!.innerHTML = message[i + 1];
 
@@ -75,7 +78,11 @@ const unregisterPage: Function = (): void => {
             document.getElementById("password-err")!.innerHTML = message[i + 1];
         }
 
-        if (!message.includes("email") && !message.includes("password"))
+        if (
+          !message.includes("username") &&
+          !message.includes("email") &&
+          !message.includes("password")
+        )
           document.getElementById("error-message")!.innerHTML =
             message.join("");
       }
@@ -83,4 +90,4 @@ const unregisterPage: Function = (): void => {
   );
 };
 
-export default unregisterPage;
+export default registrationPage;
