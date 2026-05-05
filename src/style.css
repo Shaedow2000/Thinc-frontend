@@ -63,6 +63,9 @@ body {
 .header > div > div {
   @apply flex w-fit gap-xs;
 }
+.header img {
+  @apply cursor-pointer;
+}
 
 /* Footer styles */
 .footer {
