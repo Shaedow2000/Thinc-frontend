@@ -47,6 +47,7 @@ const loginPage: Function = (): void => {
       let result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
+        localStorage.setItem("token", result.token);
         location.pathname = "/dashboard";
       } else {
         let message: string[] = result.message.split(/[:,]/);
