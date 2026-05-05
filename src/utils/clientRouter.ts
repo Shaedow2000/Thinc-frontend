@@ -52,7 +52,8 @@ export default async function clientRouter(): Promise<void> {
       location.pathname === "/new" ||
       location.pathname === "/note" ||
       location.pathname === "/draft" ||
-      location.pathname === "/search") &&
+      location.pathname === "/search" ||
+      location.pathname === "/abort") &&
     !isLoggedIn
   )
     history.pushState({}, "", "/");

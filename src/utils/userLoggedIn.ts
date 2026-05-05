@@ -2,7 +2,8 @@ export default async function isUserLoggedIn(): Promise<boolean> {
   if (
     sessionStorage.getItem("username") &&
     sessionStorage.getItem("email") &&
-    sessionStorage.getItem("notes")
+    sessionStorage.getItem("notes") &&
+    localStorage.getItem("token")
   )
     return true;
 

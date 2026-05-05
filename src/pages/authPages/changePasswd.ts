@@ -50,21 +50,19 @@ const changePasswdPage: Function = (): void => {
     "change-passwd-form",
   ) as HTMLFormElement;
 
-  if (
-    (document.getElementsByName("password")[0] as HTMLInputElement)!.value !==
-    (document.getElementsByName("other")[0] as HTMLInputElement)!.value
-  ) {
-    document.getElementById("other")!.innerHTML = "Passwords don't match";
-  } else {
-    document.getElementById("abort")!.addEventListener("click", (): void => {
-      location.pathname = "/dashboard";
-    });
-
-    changePasswdForm.addEventListener(
-      "submit",
-      async (e: SubmitEvent): Promise<void> => {
-        e.preventDefault();
-
+  changePasswdForm.addEventListener(
+    "submit",
+    async (e: SubmitEvent): Promise<void> => {
+      e.preventDefault();
+      if (
+        (document.getElementsByName("password")[0] as HTMLInputElement)!
+          .value !==
+        (document.getElementsByName("other")[0] as HTMLInputElement)!.value
+      ) {
+        document.getElementById("retype-password-err")!.innerHTML =
+          "Passwords don't match";
+        console.log("hello");
+      } else {
         let response = await fetch(
           "http://localhost:8080/auth/password_reset",
           {
@@ -79,7 +77,7 @@ const changePasswdPage: Function = (): void => {
         let result = await response.json();
 
         if (Number(String(result.status)[0]) === 2) {
-          location.pathname = "/dashboard";
+          location.pathname = "/login";
         } else {
           let message: string[] = result.message.split(/[:,]/);
 
@@ -92,6 +90,7 @@ const changePasswdPage: Function = (): void => {
             document.getElementById("email-err")!.innerHTML = "";
             document.getElementById("password-err")!.innerHTML = "";
             document.getElementById("error-message")!.innerHTML = "";
+            document.getElementById("retype-password-err")!.innerHTML = "";
 
             if (message[i] === "email")
               document.getElementById("email-err")!.innerHTML = message[i + 1];
@@ -109,9 +108,9 @@ const changePasswdPage: Function = (): void => {
             document.getElementById("error-message")!.innerHTML =
               message.join("");
         }
-      },
-    );
-  }
+      }
+    },
+  );
 };
 
 export default changePasswdPage;
