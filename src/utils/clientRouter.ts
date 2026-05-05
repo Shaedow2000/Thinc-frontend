@@ -1,4 +1,5 @@
 import dashboardPage from "../pages/app/dashboard";
+import { newNotePage } from "../pages/app/newNote";
 import readNotePage from "../pages/app/readNote";
 import accountVerificationPage from "../pages/authPages/accountVerification";
 import changePasswdPage from "../pages/authPages/changePasswd";
@@ -26,6 +27,7 @@ export default function clientRouter(): void {
     "/abort": abortPage,
     "/dashboard": dashboardPage,
     "/note": readNotePage,
+    "/new": newNotePage,
   };
 
   let page: Function = router[location.pathname];
