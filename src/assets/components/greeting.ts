@@ -6,4 +6,12 @@ const greeting: string = `
   </section>
 `;
 
-export { greeting };
+const bigTitle: Function = (title: string): string => `
+  <section class="greeting">
+    <div>
+      <p>${title}</p>
+    </div>
+  </section>
+`;
+
+export { greeting, bigTitle };

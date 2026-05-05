@@ -7,6 +7,7 @@ import passwdRecoveryPage from "../pages/authPages/passwdRecovery";
 import registrationPage from "../pages/authPages/registration";
 import resetConfirmationPage from "../pages/authPages/resetConfirmation";
 import unregisterPage from "../pages/authPages/unregister";
+import pageNotFound from "../pages/errorPages/notFound";
 
 export default function clientRouter(): void {
   const router: Record<string, Function> = {
@@ -24,4 +25,6 @@ export default function clientRouter(): void {
   let page: Function = router[location.pathname];
 
   if (page) page();
+
+  if (!page) pageNotFound();
 }

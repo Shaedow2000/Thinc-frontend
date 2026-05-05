@@ -251,6 +251,14 @@ body {
   @apply text-red-500 font-medium text-left text-caption;
 }
 
+/* Center section in error pages styles */
+.center-section {
+  @apply flex flex-col gap-sm;
+}
+.center-section span {
+  @apply text-center text-text leading-lg font-normal text-md;
+}
+
 /* hover styles */
 @media (hover: hover) {
   .button-main:hover,
