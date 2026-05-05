@@ -42,12 +42,20 @@ export default async function clientRouter(): Promise<void> {
       location.pathname === "/login" ||
       location.pathname === "/register" ||
       location.pathname === "/register" ||
-      location.pathname === "/verify" ||
-      location.pathname === "/abort") &&
+      location.pathname === "/verify") &&
     isLoggedIn
-  ) {
+  )
     history.pushState({}, "", "/dashboard");
-  }
+
+  if (
+    (location.pathname === "/dashboard" ||
+      location.pathname === "/new" ||
+      location.pathname === "/note" ||
+      location.pathname === "/draft" ||
+      location.pathname === "/search") &&
+    !isLoggedIn
+  )
+    history.pushState({}, "", "/");
 
   let page: Function = router[location.pathname];
 
