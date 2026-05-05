@@ -1,5 +1,8 @@
 import { border } from "../../assets/components/border";
-import { mainButton } from "../../assets/components/buttons";
+import {
+  mainButton,
+  secondaryButtonIcon,
+} from "../../assets/components/buttons";
 import { cardsSection } from "../../assets/components/cardsSection";
 import { headerSvgs } from "../../assets/components/header";
 import { input } from "../../assets/components/input";
@@ -17,7 +20,10 @@ const searchNotePage: Function = (): void => {
     ${heading("Search")}
     <div class="flex flex-col py-caption px-md gap-md items-center justify-center w-full">
       ${input("text", "title", "Note title")}
-      ${mainButton("Search")}
+      <div class="flex items-center justify-center py-xs gap-md">
+        ${secondaryButtonIcon("home", "Home", "/dashboard")}
+        ${mainButton("Search")}
+      </div>
     </div>
     ${border}
     ${label("Notes")}

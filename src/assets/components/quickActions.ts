@@ -5,9 +5,9 @@ const quickActions: string = `
   <section class="quick-actions">
     ${heading("Quick actions")}
     <div>
-      ${mainButtonIcon("New", "New note")}
-      ${secondaryButtonIcon("Search", "Search")}
-      ${secondaryButtonIcon("Draft", "Draft")}
+      ${mainButtonIcon("New", "New note", "/new")}
+      ${secondaryButtonIcon("Search", "Search", "/search")}
+      ${secondaryButtonIcon("Draft", "Draft", "/draft")}
     </div>
   </section>
 `;
