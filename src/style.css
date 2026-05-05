@@ -85,13 +85,13 @@ body {
 /* main button */
 .button-main,
 .button-main-icon {
-  @apply px-caption py-3 rounded-lg bg-primary font-medium text-text text-md;
+  @apply px-caption py-3 rounded-lg bg-primary font-medium text-text text-md cursor-pointer;
 }
 
 /* secondary button */
 .secondary-button,
 .secondary-button-icon {
-  @apply px-caption py-3 rounded-lg ring-2 ring-inset ring-primary font-light text-text text-md;
+  @apply px-caption py-3 rounded-lg ring-2 ring-inset ring-primary font-light text-text text-md cursor-pointer;
 }
 
 /* Buttons with icon */
