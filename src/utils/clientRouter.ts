@@ -14,8 +14,9 @@ import resetConfirmationPage from "../pages/authPages/resetConfirmation";
 import unregisterPage from "../pages/authPages/unregister";
 import abortPage from "../pages/errorPages/abort";
 import pageNotFound from "../pages/errorPages/notFound";
+import isUserLoggedIn from "./userLoggedIn";
 
-export default function clientRouter(): void {
+export default async function clientRouter(): Promise<void> {
   const router: Record<string, Function> = {
     "/": landing,
     "/login": loginPage,
@@ -33,6 +34,20 @@ export default function clientRouter(): void {
     "/draft": draftPage,
     "/search": searchNotePage,
   };
+
+  const isLoggedIn: boolean = await isUserLoggedIn();
+
+  if (
+    (location.pathname === "/" ||
+      location.pathname === "/login" ||
+      location.pathname === "/register" ||
+      location.pathname === "/register" ||
+      location.pathname === "/verify" ||
+      location.pathname === "/abort") &&
+    isLoggedIn
+  ) {
+    history.pushState({}, "", "/dashboard");
+  }
 
   let page: Function = router[location.pathname];
 
