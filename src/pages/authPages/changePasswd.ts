@@ -6,6 +6,8 @@ import { heading, label, pageTitle } from "../../assets/components/text";
 const changePasswdPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
+  app.style.height = "fit-content";
+
   app.innerHTML = /* html */ `
     ${header}
     ${pageTitle("Change password")}
