@@ -1,4 +1,5 @@
 import dashboardPage from "../pages/app/dashboard";
+import { draftPage } from "../pages/app/draft";
 import { newNotePage } from "../pages/app/newNote";
 import readNotePage from "../pages/app/readNote";
 import accountVerificationPage from "../pages/authPages/accountVerification";
@@ -28,6 +29,7 @@ export default function clientRouter(): void {
     "/dashboard": dashboardPage,
     "/note": readNotePage,
     "/new": newNotePage,
+    "/draft": draftPage,
   };
 
   let page: Function = router[location.pathname];
