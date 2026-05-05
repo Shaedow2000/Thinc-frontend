@@ -12,7 +12,8 @@ import passwdRecoveryPage from "../pages/authPages/passwdRecovery";
 import registrationPage from "../pages/authPages/registration";
 import resetConfirmationPage from "../pages/authPages/resetConfirmation";
 import unregisterPage from "../pages/authPages/unregister";
-import abortPage from "../pages/errorPages/abort";
+import abortedPage from "../pages/errorPages/abortConfirmed";
+import abortPage from "../pages/authPages/abort";
 import pageNotFound from "../pages/errorPages/notFound";
 import isUserLoggedIn from "./userLoggedIn";
 
@@ -27,6 +28,7 @@ export default async function clientRouter(): Promise<void> {
     "/reset": resetConfirmationPage,
     "/password_recovery": passwdRecoveryPage,
     "/change_passwd": changePasswdPage,
+    "/aborted": abortedPage,
     "/abort": abortPage,
     "/dashboard": dashboardPage,
     "/note": readNotePage,
@@ -52,8 +54,7 @@ export default async function clientRouter(): Promise<void> {
       location.pathname === "/new" ||
       location.pathname === "/note" ||
       location.pathname === "/draft" ||
-      location.pathname === "/search" ||
-      location.pathname === "/abort") &&
+      location.pathname === "/search") &&
     !isLoggedIn
   )
     history.pushState({}, "", "/");

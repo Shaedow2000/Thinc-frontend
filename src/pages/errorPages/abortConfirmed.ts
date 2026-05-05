@@ -3,7 +3,7 @@ import { bigTitle } from "../../assets/components/greeting";
 import { header } from "../../assets/components/header";
 import { pageTitle } from "../../assets/components/text";
 
-const abortPage: Function = async (): Promise<void> => {
+const abortedPage: Function = async (): Promise<void> => {
   const app = document.getElementById("app") as HTMLDivElement;
 
   app.style.height = "100vh";
@@ -28,4 +28,4 @@ const abortPage: Function = async (): Promise<void> => {
   );
 };
 
-export default abortPage;
+export default abortedPage;
