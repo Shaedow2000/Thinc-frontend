@@ -24,7 +24,7 @@ const loginPage: Function = (): void => {
           ${input("password", "password", "password")}
           <span class="err-message" id="password-err"></span>
         </div>
-        <a class="small-link">Forgot password?</a>
+        <a href="/password_recovery" class="small-link">Forgot password?</a>
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         ${mainButton("Login")}
       </form>

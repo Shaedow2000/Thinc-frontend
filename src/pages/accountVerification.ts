@@ -28,12 +28,67 @@ const accountVerificationPage: Function = (): void => {
           ${input("text", "code", "code")}
           <span class="err-message" id="code-err"></span>
         </div>
-        <a class="small-link">Resend verification code</a>
+        <a id="resend-verification-code-link" class="small-link">Resend verification code</a>
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         ${mainButton("Verify")}
       </form> 
     </div>
   `;
+
+  const resendCodeLink = document.getElementById(
+    "resend-verification-code-link",
+  ) as HTMLAnchorElement;
+
+  resendCodeLink.addEventListener("click", async (): Promise<void> => {
+    const email: string = (
+      document.getElementsByName("email")[0] as HTMLInputElement
+    ).value;
+
+    if (!email.replaceAll(" ", "")) {
+      document.getElementById("email-err")!.innerHTML = "An e-mail is required";
+    } else {
+      document.getElementById("email-err")!.innerHTML = "";
+
+      let response = await fetch("http://localhost:8080/auth/reverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      let result = await response.json();
+
+      const messageDiv = document.getElementById(
+        "error-message",
+      ) as HTMLSpanElement;
+
+      if (Number(String(result.status)[0]) === 2) {
+        messageDiv.classList.remove("text-red-500");
+        messageDiv.classList.add("text-green-500");
+
+        messageDiv.innerHTML = result.message;
+      } else {
+        messageDiv.classList.remove("text-green-500");
+        messageDiv.classList.add("text-red-500");
+
+        let message: string[] = result.message.split(/[:,]/);
+
+        document.getElementById("email-err")!.innerHTML = "";
+        messageDiv.innerHTML = "";
+
+        for (let i: number = 0; i < message.length; i++) {
+          message[i] =
+            message[i][0] === " "
+              ? message[i].split("").splice(1, message[i].length).join("")
+              : message[i];
+
+          if (message[i] === "email")
+            document.getElementById("email-err")!.innerHTML = message[i + 1];
+        }
+
+        if (!message.includes("email")) messageDiv.innerHTML = message.join("");
+      }
+    }
+  });
 
   const verificationForm = document.getElementById(
     "account-verification-form",
