@@ -3,7 +3,7 @@ import { mainButton, secondaryButton } from "./buttons";
 const headerSvgs: string = /* html */ `
   <header class="header">
     <div>
-      <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
+      <a href="/" class="my-auto"><img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" /></a>
       <div>
         <img src="src/assets/SVG/Avatar.svg" alt="Avatar" class="svg" />
         <img src="src/assets/SVG/Menu.svg" alt="menu" class="svg" />
@@ -15,7 +15,7 @@ const headerSvgs: string = /* html */ `
 const headerButtons: string = /* html */ `
   <header class="header">
     <div>
-      <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
+      <a href="/" class="my-auto"><img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" /></a>
       <div>
         ${secondaryButton("Login", "/login")}
         ${mainButton("Register", "/register")}
@@ -27,7 +27,7 @@ const headerButtons: string = /* html */ `
 const header: string = /* html */ `
   <header class="header">
     <div>
-      <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
+      <a href="/" class="my-auto"><img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" /></a>
     </div>
   </header>
 `;
@@ -35,7 +35,7 @@ const header: string = /* html */ `
 const headerOneButton: Function = (name: string): string => `
   <header class="header">
     <div>
-      <img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" />
+      <a href="/" class="my-auto"><img src="src/assets/SVG/Logo.svg" alt="Thinc-Logo" /></a>
       <div>
         ${secondaryButton(name, "/" + name.toLowerCase())}
       </div>
