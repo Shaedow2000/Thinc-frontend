@@ -38,7 +38,7 @@ const changePasswdPage: Function = (): void => {
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
         <section class="flex items-center gap-md">
           ${mainButton("Change")}
-          ${secondaryButton("Abort", "abort")}
+          ${secondaryButton("Abort", "/abort")}
         </section>
       </form> 
     </div>

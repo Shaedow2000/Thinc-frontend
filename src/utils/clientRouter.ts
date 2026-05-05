@@ -7,6 +7,7 @@ import passwdRecoveryPage from "../pages/authPages/passwdRecovery";
 import registrationPage from "../pages/authPages/registration";
 import resetConfirmationPage from "../pages/authPages/resetConfirmation";
 import unregisterPage from "../pages/authPages/unregister";
+import abortPage from "../pages/errorPages/abort";
 import pageNotFound from "../pages/errorPages/notFound";
 
 export default function clientRouter(): void {
@@ -20,6 +21,7 @@ export default function clientRouter(): void {
     "/reset": resetConfirmationPage,
     "/password_recovery": passwdRecoveryPage,
     "/change_passwd": changePasswdPage,
+    "/abort": abortPage,
   };
 
   let page: Function = router[location.pathname];
