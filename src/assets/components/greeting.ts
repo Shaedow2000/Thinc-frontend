@@ -1,7 +1,7 @@
-const greeting: string = `
+const greeting: Function = (username: string): string => `
   <section class="greeting">
     <div>
-      <p>Welcome back, user!</p>
+      <p>Welcome back, ${username}!</p>
     </div>
   </section>
 `;

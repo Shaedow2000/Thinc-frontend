@@ -1,3 +1,4 @@
+import dashboardPage from "../pages/app/dashboard";
 import accountVerificationPage from "../pages/authPages/accountVerification";
 import changePasswdPage from "../pages/authPages/changePasswd";
 import deleteConfirmationPage from "../pages/authPages/deleteConfirmation";
@@ -22,6 +23,7 @@ export default function clientRouter(): void {
     "/password_recovery": passwdRecoveryPage,
     "/change_passwd": changePasswdPage,
     "/abort": abortPage,
+    "/dashboard": dashboardPage,
   };
 
   let page: Function = router[location.pathname];
