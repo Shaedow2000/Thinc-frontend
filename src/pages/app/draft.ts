@@ -18,7 +18,6 @@ const draftPage: Function = (): void => {
     ${textArea}
     <div class="flex gap-md py-lg">
       ${secondaryButtonIcon("Home", "Home", "/dashboard")}
-      ${mainButtonIcon("Save", "Save")}
     </div>
   `;
 };
