@@ -2,9 +2,8 @@ import { mainButtonIcon } from "../../assets/components/buttons";
 import { bigTitle } from "../../assets/components/greeting";
 import { header } from "../../assets/components/header";
 import { pageTitle } from "../../assets/components/text";
-import isUserLoggedIn from "../../utils/userLoggedIn";
 
-const abortPage: Function = (): void => {
+const abortPage: Function = async (): Promise<void> => {
   const app = document.getElementById("app") as HTMLDivElement;
 
   app.style.height = "100vh";
@@ -20,7 +19,13 @@ const abortPage: Function = (): void => {
     ${mainButtonIcon("Home", "Home", "/")}
   `;
 
-  // await fetch(`http://localhost:8080/auth/user/${}`)
+  await fetch(
+    `http://localhost:8080/auth/user/${sessionStorage.getItem("userId")}`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    },
+  );
 };
 
 export default abortPage;

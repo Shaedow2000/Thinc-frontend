@@ -3,6 +3,7 @@ export default async function isUserLoggedIn(): Promise<boolean> {
     sessionStorage.getItem("username") &&
     sessionStorage.getItem("email") &&
     sessionStorage.getItem("notes") &&
+    sessionStorage.getItem("userId") &&
     localStorage.getItem("token")
   )
     return true;
@@ -27,6 +28,7 @@ export default async function isUserLoggedIn(): Promise<boolean> {
 
     sessionStorage.setItem("username", account.username);
     sessionStorage.setItem("email", account.email);
+    sessionStorage.setItem("userId", account._id);
     sessionStorage.setItem("notes", JSON.stringify(notes));
   }
 
