@@ -13,12 +13,19 @@ function linkButtons(): void {
       location.href = element.dataset.href;
 
     if (element.id === "open-menu" || element.id === "x-mark") toggleMenu();
+
+    if (element.className.includes("card")) redirectToNote(element.id);
   });
 }
 
 function toggleMenu(): void {
   document.getElementById("menu")!.classList.toggle("hidden");
   document.getElementById("menu")!.classList.toggle("-right-200");
+}
+
+function redirectToNote(id: string): void {
+  sessionStorage.setItem("noteReadId", id);
+  history.pushState({}, "", "/note");
 }
 
 export { linkButtons, toggleMenu };
