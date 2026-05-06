@@ -3,7 +3,7 @@ import { mainButtonIcon, secondaryButtonIcon } from "./buttons";
 import { label } from "./text";
 
 const menuComponent: Function = (): void => {
-  document.getElementById("app")!.innerHTML = `
+  const menu: string = /* html */ `
     <section class="menu">
       <div class="top-bar">
         <h1 class="py-sm w-fit h-fit font-bold text-lg text-dark-white">Menu</h1>
@@ -24,6 +24,8 @@ const menuComponent: Function = (): void => {
       </div>
     </section>
   `;
+
+  document.body.insertAdjacentHTML("afterbegin", menu);
 };
 
 export { menuComponent };
