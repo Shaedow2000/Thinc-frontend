@@ -19,14 +19,42 @@ const searchNotePage: Function = (): void => {
     ${heading("Search")}
     <div class="flex flex-col py-caption px-md gap-md items-center justify-center w-full">
       ${input("text", "title", "Note title")}
-      <div class="flex items-center justify-center py-xs gap-md">
+      <div id="buttons-section-search" class="flex items-center justify-center py-xs gap-md">
         ${secondaryButtonIcon("home", "Home", "/dashboard")}
         ${mainButton("Search")}
       </div>
     </div>
     ${border}
-    ${foundNotes([])}
+    <div id="found-notes" class="w-full h-full">
+      ${foundNotes([])}
+    </div>
   `;
+
+  document
+    .querySelector("#buttons-section-search > .button-main")!
+    .addEventListener("click", (): void => {
+      let foundNotesArrayIndexes: number[] = [];
+      let foundNotesArray: { title: string; text: string }[] = [];
+
+      const searchQuerry: string = (
+        document.getElementsByName("title")[0] as HTMLInputElement
+      ).value;
+
+      const notes: any[] =
+        JSON.parse(sessionStorage.getItem("notes") ?? "") ?? [];
+
+      for (let i: number = 0; i < notes.length; i++) {
+        if (notes[i].title.includes(searchQuerry))
+          foundNotesArrayIndexes.push(i);
+      }
+
+      for (let i: number = 0; i < foundNotesArrayIndexes.length; i++) {
+        foundNotesArray.push(notes[foundNotesArrayIndexes[i]]);
+      }
+
+      document.getElementById("found-notes")!.innerHTML =
+        foundNotes(foundNotesArray);
+    });
 
   headerSvgs();
 };
