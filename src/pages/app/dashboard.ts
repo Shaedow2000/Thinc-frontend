@@ -11,14 +11,14 @@ const dashboardPage: Function = async (): Promise<void> => {
 
   app.style.height = "fit-content";
 
-  let notes: [] = [];
+  let notes: any[] = [];
 
   try {
-    notes = JSON.parse(sessionStorage.getItem("notes") ?? "") ?? [];
+    notes = JSON.parse(sessionStorage.getItem("notes") ?? "[]") ?? [];
   } catch (err: Error | unknown) {
     sessionStorage.clear();
     await isUserLoggedIn();
-    notes = JSON.parse(sessionStorage.getItem("notes") ?? "") ?? [];
+    notes = JSON.parse(sessionStorage.getItem("notes") ?? "[]") ?? [];
   }
 
   app.innerHTML = `

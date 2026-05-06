@@ -41,7 +41,7 @@ const searchNotePage: Function = (): void => {
       ).value;
 
       const notes: any[] =
-        JSON.parse(sessionStorage.getItem("notes") ?? "") ?? [];
+        JSON.parse(sessionStorage.getItem("notes") ?? "[]") ?? [];
 
       for (let i: number = 0; i < notes.length; i++) {
         if (notes[i].title.includes(searchQuerry))

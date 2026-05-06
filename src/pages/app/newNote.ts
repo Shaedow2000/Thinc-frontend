@@ -38,7 +38,7 @@ const newNotePage: Function = (): void => {
       ).value;
 
       const numberONotes: number = (
-        JSON.parse(sessionStorage.getItem("notes") ?? "") ?? []
+        JSON.parse(sessionStorage.getItem("notes") ?? "[]") ?? []
       ).length;
 
       if (title.replaceAll(" ", "") === "")
