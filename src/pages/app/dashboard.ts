@@ -10,8 +10,7 @@ const dashboardPage: Function = (): void => {
 
   app.style.height = "fit-content";
 
-  app.innerHTML = /* hmtl */ `
-    ${headerSvgs}
+  app.innerHTML = `
     ${pageTitle("Dashboard")}
     ${greeting("username")}
     ${border}
@@ -19,6 +18,8 @@ const dashboardPage: Function = (): void => {
     ${border}
     ${recentNotesSection([])}
   `;
+
+  headerSvgs();
 };
 
 export default dashboardPage;

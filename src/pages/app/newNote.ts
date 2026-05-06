@@ -12,8 +12,7 @@ const newNotePage: Function = (): void => {
 
   app.style.height = "100vh";
 
-  app.innerHTML = /* html */ `
-    ${headerSvgs}
+  app.innerHTML = `
     ${pageTitle("Notes / New")}
     ${heading("Create new note")}
     <div class="w-full px-md py-xs">
@@ -26,6 +25,8 @@ const newNotePage: Function = (): void => {
       ${mainButtonIcon("Save", "Save")}
     </div>
   `;
+
+  headerSvgs();
 };
 
 export { newNotePage };

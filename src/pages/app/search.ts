@@ -14,8 +14,7 @@ const searchNotePage: Function = (): void => {
   app.style.height = "fit-content";
   app.style.minHeight = "100vh";
 
-  app.innerHTML = /* html */ `
-    ${headerSvgs}
+  app.innerHTML = `
     ${pageTitle("Notes / Search")}
     ${heading("Search")}
     <div class="flex flex-col py-caption px-md gap-md items-center justify-center w-full">
@@ -28,6 +27,8 @@ const searchNotePage: Function = (): void => {
     ${border}
     ${foundNotes([])}
   `;
+
+  headerSvgs();
 };
 
 export { searchNotePage };

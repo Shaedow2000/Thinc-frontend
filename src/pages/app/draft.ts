@@ -8,8 +8,7 @@ const draftPage: Function = (): void => {
 
   app.style.height = "100vh";
 
-  app.innerHTML = /* html */ `
-    ${headerSvgs}
+  app.innerHTML = `
     ${pageTitle("Notes / Draft")}
     ${heading("Draft")}
     ${textArea}
@@ -17,6 +16,8 @@ const draftPage: Function = (): void => {
       ${secondaryButtonIcon("Home", "Home", "/dashboard")}
     </div>
   `;
+
+  headerSvgs();
 };
 
 export { draftPage };

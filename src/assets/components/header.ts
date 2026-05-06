@@ -1,6 +1,9 @@
 import { mainButton, secondaryButton } from "./buttons";
 
-const headerSvgs: string = /* html */ `
+const headerSvgs: Function = (): void => {
+  document.getElementById("app")!.insertAdjacentHTML(
+    "afterbegin",
+    `
   <header class="header">
     <div>
       <img src="src/assets/SVG/Logo.svg" data-href="/" alt="Thinc-Logo" />
@@ -10,7 +13,9 @@ const headerSvgs: string = /* html */ `
       </div>
     </div>
   </header>
-`;
+  `,
+  );
+};
 
 const headerButtons: string = /* html */ `
   <header class="header">

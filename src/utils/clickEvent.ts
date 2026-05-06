@@ -11,7 +11,14 @@ function linkButtons(): void {
 
     if (element.dataset.href && element.dataset.href.includes("https://"))
       location.href = element.dataset.href;
+
+    if (element.id === "open-menu" || element.id === "x-mark") toggleMenu();
   });
 }
 
-export { linkButtons };
+function toggleMenu(): void {
+  document.getElementById("menu")!.classList.toggle("hidden");
+  document.getElementById("menu")!.classList.toggle("-right-200");
+}
+
+export { linkButtons, toggleMenu };

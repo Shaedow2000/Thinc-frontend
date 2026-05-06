@@ -264,10 +264,10 @@ body {
 
 /* menu styles */
 .menu {
-  @apply w-screen h-screen bg-dark-border absolute top-0 z-50 flex flex-col gap-sm px-md;
+  @apply w-screen h-screen bg-dark-border absolute top-0 z-50 flex-col gap-sm px-md;
 }
 .menu .top-bar {
-  @apply flex justify-between px-lg py-sm;
+  @apply flex justify-between items-center px-lg py-sm;
 }
 .menu .quick-actions-section,
 .menu .settings-section {
@@ -276,6 +276,9 @@ body {
 .menu .quick-actions-section .button-main-icon,
 .menu .settings-section .secondary-button-icon {
   @apply gap-lg;
+}
+#x-mark {
+  @apply cursor-pointer;
 }
 
 /* hover styles */

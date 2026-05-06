@@ -10,8 +10,7 @@ const readNotePage: Function = (): void => {
 
   app.style.height = "100vh";
 
-  app.innerHTML = /* html */ `
-    ${headerSvgs}
+  app.innerHTML = `
     ${pageTitle("Note / " + noteId)}
     ${heading(noteTitle)}
     ${textArea}
@@ -21,6 +20,8 @@ const readNotePage: Function = (): void => {
       ${secondaryButtonIcon("Delete", "Delete", "")}
     </div>
   `;
+
+  headerSvgs();
 };
 
 export default readNotePage;
