@@ -59,6 +59,15 @@ const newNotePage: Function = (): void => {
       const result = await response.json();
 
       document.getElementById("message")!.innerHTML = result.message;
+
+      if (Number(String(result.status)[0]) === 2) {
+        let notes: any[] =
+          JSON.parse(sessionStorage.getItem("notes") ?? "") ?? [];
+
+        notes.push(result.data);
+
+        sessionStorage.setItem("notes", JSON.stringify(notes));
+      }
     });
 
   headerSvgs();
