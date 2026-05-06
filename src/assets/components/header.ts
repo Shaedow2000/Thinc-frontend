@@ -5,8 +5,8 @@ const headerSvgs: string = /* html */ `
     <div>
       <img src="src/assets/SVG/Logo.svg" data-href="/" alt="Thinc-Logo" />
       <div>
-        <img src="src/assets/SVG/Avatar.svg" alt="Avatar" class="svg" />
-        <img src="src/assets/SVG/Menu.svg" alt="menu" class="svg" />
+        <img data-href="/account" src="src/assets/SVG/Avatar.svg" alt="Avatar" class="svg" />
+        <img id="open-menu" src="src/assets/SVG/Menu.svg" alt="menu" class="svg" />
       </div>
     </div>
   </header>
