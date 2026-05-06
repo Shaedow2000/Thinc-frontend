@@ -64,4 +64,6 @@ export default async function clientRouter(): Promise<void> {
   if (page) page();
 
   if (!page) pageNotFound();
+
+  document.getElementById("menu")!.classList.add("hidden", "-right-200");
 }
