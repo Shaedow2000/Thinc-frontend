@@ -10,6 +10,8 @@ export default async function isUserLoggedIn(): Promise<boolean> {
 
   const token: string | null | undefined = localStorage.getItem("token");
 
+  if (!token) return false;
+
   const response = await fetch("http://localhost:8080/auth/tokenAuth", {
     method: "GET",
     headers: {
@@ -29,7 +31,7 @@ export default async function isUserLoggedIn(): Promise<boolean> {
     sessionStorage.setItem("username", account.username);
     sessionStorage.setItem("email", account.email);
     sessionStorage.setItem("userId", account._id);
-    sessionStorage.setItem("notes", JSON.stringify(notes));
+    sessionStorage.setItem("notes", JSON.stringify(notes.notes));
   }
 
   return isLoggedIn;
