@@ -61,7 +61,7 @@ const newNotePage: Function = (): void => {
       document.getElementById("message")!.innerHTML = result.message;
 
       if (Number(String(result.status)[0]) === 2)
-        sessionStorage.setItem("notes", JSON.stringify(result.data));
+        sessionStorage.setItem("notes", JSON.stringify(result.data.notes));
     });
 
   headerSvgs();
