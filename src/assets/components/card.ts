@@ -3,10 +3,10 @@ const card: Function = (
   text: string,
   noteId: string,
 ): string => `
-  <section class="card" data-href="/note/${noteId}">
-    <div>
-      <h2>${title}</h2>
-      <p>${text}</p>
+  <section class="card cursor-pointer" id="${noteId}">
+    <div class="card-div">
+      <h2 class="card-h2">${title}</h2>
+      <p class="card-p">${text}</p>
     </div>
   </section>
 `;

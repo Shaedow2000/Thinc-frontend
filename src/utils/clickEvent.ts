@@ -14,7 +14,13 @@ function linkButtons(): void {
 
     if (element.id === "open-menu" || element.id === "x-mark") toggleMenu();
 
-    if (element.className.includes("card")) redirectToNote(element.id);
+    if (
+      element.classList.contains("card") ||
+      element.classList.contains("card-div") ||
+      element.classList.contains("card-h2") ||
+      element.classList.contains("card-p")
+    )
+      redirectToNote(element.id);
   });
 }
 
@@ -26,6 +32,7 @@ function toggleMenu(): void {
 function redirectToNote(id: string): void {
   sessionStorage.setItem("noteReadId", id);
   history.pushState({}, "", "/note");
+  clientRouter();
 }
 
 export { linkButtons, toggleMenu };

@@ -62,7 +62,6 @@ const changePasswdPage: Function = (): void => {
       ) {
         document.getElementById("retype-password-err")!.innerHTML =
           "Passwords don't match";
-        console.log("hello");
       } else {
         let response = await fetch(
           "http://localhost:8080/auth/password_reset",

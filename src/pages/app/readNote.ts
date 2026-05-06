@@ -4,8 +4,7 @@ import { heading, pageTitle } from "../../assets/components/text";
 
 const readNotePage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
-  let noteId: string =
-    JSON.parse(sessionStorage.getItem("noteReadId") ?? "404") ?? "404";
+  const noteId: string = sessionStorage.getItem("noteReadId") ?? "404";
 
   let noteTitle: string = "";
   let noteText: string = "";
@@ -13,7 +12,6 @@ const readNotePage: Function = (): void => {
   if (noteId.toString() === "404") {
     noteTitle = "Note not found";
   } else {
-    console.log("hehee");
     let notes: any[] =
       JSON.parse(sessionStorage.getItem("notes") ?? "[]") ?? [];
 

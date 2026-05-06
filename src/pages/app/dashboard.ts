@@ -30,8 +30,6 @@ const dashboardPage: Function = async (): Promise<void> => {
     ${recentNotesSection(notes.reverse())}
   `;
 
-  console.log(sessionStorage.getItem("notes"));
-
   headerSvgs();
 };
 
