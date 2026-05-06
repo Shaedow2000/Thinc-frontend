@@ -27,7 +27,7 @@ const dashboardPage: Function = async (): Promise<void> => {
     ${border}
     ${quickActions}
     ${border}
-    ${recentNotesSection(notes)}
+    ${recentNotesSection(notes.reverse())}
   `;
 
   console.log(sessionStorage.getItem("notes"));
