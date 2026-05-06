@@ -225,7 +225,8 @@ body {
 .textarea {
   @apply w-full h-full -mx-md text-text text-md font-medium;
 }
-.textarea textarea {
+.textarea textarea,
+.textarea p {
   @apply -mx-md w-screen bg-dark-border h-full py-md px-md md:px-4xl;
 }
 
