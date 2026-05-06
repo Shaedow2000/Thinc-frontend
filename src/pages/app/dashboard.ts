@@ -10,14 +10,18 @@ const dashboardPage: Function = (): void => {
 
   app.style.height = "fit-content";
 
+  let notes: [] = JSON.parse(sessionStorage.getItem("notes") ?? "") ?? [];
+
   app.innerHTML = `
     ${pageTitle("Dashboard")}
-    ${greeting("username")}
+    ${greeting(sessionStorage.getItem("username"))}
     ${border}
     ${quickActions}
     ${border}
-    ${recentNotesSection([])}
+    ${recentNotesSection(notes)}
   `;
+
+  console.log(sessionStorage.getItem("notes"));
 
   headerSvgs();
 };
