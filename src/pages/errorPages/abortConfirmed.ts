@@ -18,7 +18,7 @@ const abortedPage: Function = async (): Promise<void> => {
   `;
 
   await fetch(
-    `http://localhost:8080/auth/user/${sessionStorage.getItem("userId")}`,
+    `${import.meta.env.VITE_API_URL}/auth/user/${sessionStorage.getItem("userId")}`,
     {
       method: "GET",
       headers: { "Content-Type": "application/json" },

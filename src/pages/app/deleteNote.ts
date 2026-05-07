@@ -29,13 +29,16 @@ const deleteNotePage: Function = (): void => {
     ?.addEventListener("click", async (): Promise<void> => {
       let noteId: string = sessionStorage.getItem("noteReadId") ?? "";
 
-      const response = await fetch(`http://localhost:8080/api/note/${noteId}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/note/${noteId}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         },
-      });
+      );
 
       const result = await response.json();
 

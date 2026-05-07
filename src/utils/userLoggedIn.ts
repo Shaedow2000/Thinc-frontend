@@ -12,13 +12,16 @@ export default async function isUserLoggedIn(): Promise<boolean> {
 
   if (!token) return false;
 
-  const response = await fetch("http://localhost:8080/auth/tokenAuth", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
+  const response = await fetch(
+    `${import.meta.env.VITE_API_URL}/auth/tokenAuth`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   const result = await response.json();
 

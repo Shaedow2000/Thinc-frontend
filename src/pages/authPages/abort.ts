@@ -33,7 +33,7 @@ const abortPage: Function = (): void => {
     async (e: SubmitEvent): Promise<void> => {
       e.preventDefault();
 
-      let response = await fetch("http://localhost:8080/auth/abort", {
+      let response = await fetch(`${import.meta.env.VITE_API_URL}/auth/abort`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(Object.fromEntries(new FormData(abortForm))),

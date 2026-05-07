@@ -50,7 +50,7 @@ html {
 }
 
 body {
-  @apply w-screen h-full bg-background flex flex-col justify-between;
+  @apply w-screen h-fit bg-background flex flex-col justify-between;
 }
 
 #app {
@@ -233,11 +233,11 @@ body {
 
 /* Text area styles */
 .textarea {
-  @apply w-full h-full -mx-md md:-mx-4xl text-text text-md font-medium;
+  @apply flex flex-col flex-1 w-full h-full -mx-md md:-mx-4xl text-text text-md font-medium;
 }
 .textarea textarea,
 .textarea p {
-  @apply -mx-md md:-mx-4xl w-screen bg-dark-border h-full py-md px-md md:px-4xl;
+  @apply -mx-md md:-mx-4xl flex flex-col flex-1 w-screen bg-dark-border h-full py-md px-md md:px-4xl;
 }
 
 /* Form styles */

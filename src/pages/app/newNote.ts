@@ -42,17 +42,20 @@ const newNotePage: Function = (): void => {
       if (title.replaceAll(" ", "") === "")
         title = `Untiteled #${numberONotes + 1}`;
 
-      const response = await fetch("http://localhost:8080/api/notes", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/notes`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            title: title,
+            text: text,
+          }),
         },
-        body: JSON.stringify({
-          title: title,
-          text: text,
-        }),
-      });
+      );
 
       const result = await response.json();
 

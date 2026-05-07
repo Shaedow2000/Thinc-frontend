@@ -36,7 +36,7 @@ const passwdRecoveryPage: Function = (): void => {
       e.preventDefault();
 
       let response = await fetch(
-        "http://localhost:8080/auth/reset_verification",
+        `${import.meta.env.VITE_API_URL}/auth/reset_verification`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

@@ -62,7 +62,7 @@ const changePasswdPage: Function = (): void => {
           "Passwords don't match";
       } else {
         let response = await fetch(
-          "http://localhost:8080/auth/password_reset",
+          `${import.meta.env.VITE_API_URL}/auth/password_reset`,
           {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },

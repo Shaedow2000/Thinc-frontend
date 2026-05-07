@@ -50,11 +50,14 @@ const deleteConfirmationPage: Function = (): void => {
     } else {
       document.getElementById("email-err")!.innerHTML = "";
 
-      let response = await fetch("http://localhost:8080/auth/reverify", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+      let response = await fetch(
+        `${import.meta.env.VITE_API_URL}/auth/reverify`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        },
+      );
 
       let result = await response.json();
 
@@ -100,13 +103,16 @@ const deleteConfirmationPage: Function = (): void => {
     async (e: SubmitEvent): Promise<void> => {
       e.preventDefault();
 
-      let response = await fetch("http://localhost:8080/auth/confirmation", {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(
-          Object.fromEntries(new FormData(confirmationForm)),
-        ),
-      });
+      let response = await fetch(
+        `${import.meta.env.VITE_API_URL}/auth/confirmation`,
+        {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(
+            Object.fromEntries(new FormData(confirmationForm)),
+          ),
+        },
+      );
 
       let result = await response.json();
 
