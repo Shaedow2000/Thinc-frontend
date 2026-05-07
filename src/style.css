@@ -36,6 +36,9 @@
   /* shadow size */
   --shadow-uniform: 0 4px 4px black;
   --text-shadow-uniform: 0 4px 4px black;
+
+  /* Custom breakpoint */
+  --breakpoint-xs: 400px;
 }
 
 * {
@@ -43,11 +46,11 @@
 }
 
 body {
-  @apply w-screen h-fit bg-background;
+  @apply w-screen h-fit bg-background flex flex-col justify-between;
 }
 
 #app {
-  @apply flex flex-col gap-sm px-md md:p-4xl w-screen h-fit bg-transparent;
+  @apply flex flex-col gap-sm px-md md:p-4xl w-screen h-full min-h-screen bg-transparent;
 }
 
 /* header styles */
@@ -138,7 +141,7 @@ body {
 
 /* Card styles */
 .card {
-  @apply px-md py-lg w-44 text-center bg-primary border-2 border-border rounded-lg;
+  @apply px-md py-lg w-56 xs:w-44 text-center bg-primary border-2 border-border rounded-lg;
 }
 .card:active {
   @apply translate-y-1 shadow-none;
@@ -181,7 +184,7 @@ body {
   @apply px-md py-lg w-full h-full;
 }
 .greeting p {
-  @apply w-full h-fit text-center text-2xl text-text font-semibold text-shadow-uniform leading-3xl;
+  @apply wrap-break-word w-full h-fit text-center text-2xl text-text font-semibold text-shadow-uniform leading-3xl;
 }
 
 /* Quick actions section styles */
@@ -189,7 +192,7 @@ body {
   @apply py-lg w-full h-fit;
 }
 .quick-actions div {
-  @apply flex w-full items-center justify-center p-sm gap-caption;
+  @apply flex flex-col xs:flex-row w-full items-center justify-center p-sm gap-caption;
 }
 
 /* Notes section styles */
