@@ -66,7 +66,7 @@ const editNotePage: Function = (): void => {
       if (title.replaceAll(" ", "") === "")
         title = `Untiteled #${numberONotes + 1}`;
 
-      const response = await fetch("http://localhost:8080/api/notes", {
+      const response = await fetch(`http://localhost:8080/api/note/${noteId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
