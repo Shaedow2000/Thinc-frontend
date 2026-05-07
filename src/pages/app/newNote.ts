@@ -61,7 +61,7 @@ const newNotePage: Function = (): void => {
       if (Number(String(result.status)[0]) === 2)
         sessionStorage.setItem("notes", JSON.stringify(result.data.notes));
 
-      if (Number(String(result.status)[0]) === 2) {
+      if (Number(String(result.status)[0]) !== 2) {
         let messageArray: string[] = result.message.split(/[:,]/);
         let message: string = "";
 

@@ -37,7 +37,7 @@ const readNotePage: Function = (): void => {
     <div class="flex gap-md py-lg">
       ${secondaryButtonIcon("Home", "Home", "/dashboard")}
       ${secondaryButtonIcon("Edit", "Edit", "/edit")}
-      ${secondaryButtonIcon("Delete", "Delete", "")}
+      ${secondaryButtonIcon("Delete", "Delete", "/confirm_note_delete")}
     </div>
   `;
 

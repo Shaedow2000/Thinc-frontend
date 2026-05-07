@@ -17,6 +17,7 @@ import abortPage from "../pages/authPages/abort";
 import pageNotFound from "../pages/errorPages/notFound";
 import isUserLoggedIn from "./userLoggedIn";
 import editNotePage from "../pages/app/editNote";
+import deleteNotePage from "../pages/app/deleteNote";
 
 export default async function clientRouter(): Promise<void> {
   const router: Record<string, Function> = {
@@ -37,6 +38,7 @@ export default async function clientRouter(): Promise<void> {
     "/edit": editNotePage,
     "/draft": draftPage,
     "/search": searchNotePage,
+    "/confirm_note_delete": deleteNotePage,
   };
 
   const isLoggedIn: boolean = await isUserLoggedIn();
