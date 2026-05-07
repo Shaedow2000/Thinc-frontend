@@ -9,8 +9,6 @@ import isUserLoggedIn from "../../utils/userLoggedIn";
 const dashboardPage: Function = async (): Promise<void> => {
   const app = document.getElementById("app") as HTMLDivElement;
 
-  app.style.height = "fit-content";
-
   let notes: any[] = [];
 
   try {

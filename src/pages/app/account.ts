@@ -8,8 +8,6 @@ import { label, pageTitle } from "../../assets/components/text";
 const accountPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
-  app.style.height = "fit-content";
-
   app.innerHTML = `
     ${pageTitle("Account")}
     <section class="flex py-caption gap-lg items-center justify-start w-full">

@@ -24,8 +24,6 @@ const readNotePage: Function = (): void => {
     }
   }
 
-  app.style.height = "100vh";
-
   app.innerHTML = `
     ${pageTitle("Note / " + noteId)}
     ${heading(noteTitle)}

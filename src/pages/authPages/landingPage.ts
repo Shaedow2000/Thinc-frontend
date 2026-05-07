@@ -10,8 +10,6 @@ import { heading } from "../../assets/components/text";
 const landing: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
-  app.style.height = "fit-content";
-
   let subjectsCards: any[] = [
     {
       title: "Simplicity",

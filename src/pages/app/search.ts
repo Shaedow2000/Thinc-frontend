@@ -11,9 +11,6 @@ import { heading, pageTitle } from "../../assets/components/text";
 const searchNotePage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
-  app.style.height = "fit-content";
-  app.style.minHeight = "100vh";
-
   app.innerHTML = `
     ${pageTitle("Notes / Search")}
     ${heading("Search")}

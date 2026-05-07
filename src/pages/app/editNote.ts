@@ -29,8 +29,6 @@ const editNotePage: Function = (): void => {
     }
   }
 
-  app.style.height = "100vh";
-
   app.innerHTML = `
     ${pageTitle(`Notes / Edit`)}
     ${heading("Edit note")}

@@ -45,12 +45,16 @@
   @apply transition-all duration-200 outline-0;
 }
 
+html {
+  @apply h-full;
+}
+
 body {
-  @apply w-screen h-fit bg-background flex flex-col justify-between;
+  @apply w-screen h-full bg-background flex flex-col justify-between;
 }
 
 #app {
-  @apply flex flex-col gap-sm px-md md:p-4xl w-screen h-full min-h-screen bg-transparent;
+  @apply flex flex-col gap-sm md:gap-xl px-md md:px-4xl w-screen min-h-screen bg-transparent;
 }
 
 /* header styles */
@@ -224,16 +228,16 @@ body {
 
 /* Border style */
 .separator {
-  @apply w-screen h-sm -mx-md bg-primary;
+  @apply w-screen h-sm -mx-md md:-mx-4xl bg-primary;
 }
 
 /* Text area styles */
 .textarea {
-  @apply w-full h-full -mx-md text-text text-md font-medium;
+  @apply w-full h-full -mx-md md:-mx-4xl text-text text-md font-medium;
 }
 .textarea textarea,
 .textarea p {
-  @apply -mx-md w-screen bg-dark-border h-full py-md px-md md:px-4xl;
+  @apply -mx-md md:-mx-4xl w-screen bg-dark-border h-full py-md px-md md:px-4xl;
 }
 
 /* Form styles */
@@ -271,7 +275,10 @@ body {
 
 /* menu styles */
 .menu {
-  @apply w-screen h-screen bg-dark-border absolute top-0 z-50 flex-col gap-sm px-md;
+  @apply w-screen min-h-screen lg:w-125 lg:h-fit lg:absolute lg:right-10 lg:top-10 lg:min-h-160 lg:rounded-2xl lg:shadow-xl lg:shadow-black bg-dark-border absolute top-0 z-50 flex-col gap-sm px-md;
+}
+.menu .separator {
+  @apply -mx-md lg:w-125;
 }
 .menu .top-bar {
   @apply flex justify-between items-center px-lg py-sm;

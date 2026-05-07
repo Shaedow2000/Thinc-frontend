@@ -6,8 +6,6 @@ import { pageTitle } from "../../assets/components/text";
 const abortedPage: Function = async (): Promise<void> => {
   const app = document.getElementById("app") as HTMLDivElement;
 
-  app.style.height = "100vh";
-
   app.innerHTML = /* html */ `
     ${header}
     ${pageTitle("Abort changing password")}

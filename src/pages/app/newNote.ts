@@ -10,8 +10,6 @@ import { textArea } from "../../assets/components/textArea";
 const newNotePage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
-  app.style.height = "100vh";
-
   app.innerHTML = `
     ${pageTitle("Notes / New")}
     ${heading("Create new note")}

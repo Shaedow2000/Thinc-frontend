@@ -5,12 +5,9 @@ import {
 import { bigTitle } from "../../assets/components/greeting";
 import { header } from "../../assets/components/header";
 import { pageTitle } from "../../assets/components/text";
-import clientRouter from "../../utils/clientRouter";
 
 const logoutPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
-
-  app.style.height = "100vh";
 
   app.innerHTML = /* html */ `
     ${header}

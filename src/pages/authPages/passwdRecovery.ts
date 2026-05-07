@@ -6,8 +6,6 @@ import { heading, label, pageTitle } from "../../assets/components/text";
 const passwdRecoveryPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
-  app.style.height = "100vh";
-
   app.innerHTML = /* html */ `
     ${header}
     ${pageTitle("Password recovery")}

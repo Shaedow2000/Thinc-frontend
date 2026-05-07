@@ -6,8 +6,6 @@ import { heading, label, pageTitle } from "../../assets/components/text";
 const loginPage: Function = (): void => {
   const app = document.getElementById("app") as HTMLDivElement;
 
-  app.style.height = "100vh";
-
   app.innerHTML = /* html */ `
     ${headerOneButton("Register")}
     ${pageTitle("Login")}
