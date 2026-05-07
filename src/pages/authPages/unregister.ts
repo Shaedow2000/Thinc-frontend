@@ -17,16 +17,18 @@ const unregisterPage: Function = (): void => {
         <div>
           ${label("Email")}
           ${input("email", "email", "email")}
+          <span class="err-message" id="email-err"></span>
         </div>
         <div>
           ${label("Password")}
           ${input("password", "password", "password")}
+          <span class="err-message" id="password-err"></span>
         </div>
         <a href="/password_recovery" class="small-link">Forgot passwrod?</a>
         <span class="text-red-500 font-medium text-center text-caption" id="error-message"></span>
-        <section class="flex items-center gap-md">
+        <section class="flex items-center gap-md" id="buttons-section-unregister">
           ${mainButton("Unregister")}
-          ${secondaryButton("Abort", "abort")}
+          ${secondaryButton("Abort", "/")}
         </section>
       </form> 
     </div>
@@ -35,10 +37,6 @@ const unregisterPage: Function = (): void => {
   const unregisterForm = document.getElementById(
     "unregister-form",
   ) as HTMLFormElement;
-
-  document.getElementById("abort")!.addEventListener("click", (): void => {
-    location.pathname = "/unregister_confirmation";
-  });
 
   unregisterForm.addEventListener(
     "submit",
@@ -54,7 +52,7 @@ const unregisterPage: Function = (): void => {
       const result = await response.json();
 
       if (Number(String(result.status)[0]) === 2) {
-        location.pathname = "/";
+        location.pathname = "/unregister_confirmation";
       } else {
         let message: string[] = result.message.split(/[:,]/);
 
