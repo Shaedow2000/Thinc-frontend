@@ -140,6 +140,9 @@ body {
 .card {
   @apply px-md py-lg w-44 text-center bg-primary border-2 border-border rounded-lg;
 }
+.card:active {
+  @apply translate-y-1 shadow-none;
+}
 .card h2,
 .card p {
   @apply w-fit h-fit;
@@ -296,6 +299,9 @@ body {
 
   .input:hover {
     @apply -translate-y-1 bg-text shadow-uniform;
+  }
+  .card:hover {
+    @apply -translate-y-1 shadow-uniform bg-primary-hover;
   }
 }
 
