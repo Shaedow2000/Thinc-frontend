@@ -80,10 +80,29 @@ const editNotePage: Function = (): void => {
 
       const result = await response.json();
 
-      document.getElementById("message")!.innerHTML = result.message;
-
       if (Number(String(result.status)[0]) === 2)
         sessionStorage.setItem("notes", JSON.stringify(result.data.notes));
+
+      if (Number(String(result.status)[0]) !== 2) {
+        let messageArray: string[] = result.message.split(/[:,]/);
+        let message: string = "";
+
+        if (messageArray.length === 3) message = messageArray[2];
+        if (messageArray.length > 3)
+          message = `
+          ${messageArray[2]};
+          ${messageArray[4]}
+        `;
+
+        document.getElementById("message")!.style.color =
+          "oklch(63.7% 0.237 25.331)";
+
+        document.getElementById("message")!.innerHTML = message;
+      } else {
+        document.getElementById("message")!.style.color =
+          "oklch(72.3% 0.219 149.579)";
+        document.getElementById("message")!.innerHTML = result.message;
+      }
     });
 
   headerSvgs();
