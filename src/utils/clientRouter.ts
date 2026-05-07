@@ -19,6 +19,7 @@ import isUserLoggedIn from "./userLoggedIn";
 import editNotePage from "../pages/app/editNote";
 import deleteNotePage from "../pages/app/deleteNote";
 import accountPage from "../pages/app/account";
+import logoutPage from "../pages/authPages/logout";
 
 export default async function clientRouter(): Promise<void> {
   const router: Record<string, Function> = {
@@ -29,6 +30,7 @@ export default async function clientRouter(): Promise<void> {
     "/unregister": unregisterPage,
     "/unregister_confirmation": deleteConfirmationPage,
     "/reset": resetConfirmationPage,
+    "/logout": logoutPage,
     "/password_recovery": passwdRecoveryPage,
     "/change_passwd": changePasswdPage,
     "/aborted": abortedPage,
