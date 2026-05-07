@@ -67,7 +67,7 @@ const editNotePage: Function = (): void => {
         title = `Untiteled #${numberONotes + 1}`;
 
       const response = await fetch(`http://localhost:8080/api/note/${noteId}`, {
-        method: "POST",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
