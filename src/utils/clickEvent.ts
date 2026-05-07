@@ -14,13 +14,7 @@ function linkButtons(): void {
 
     if (element.id === "open-menu" || element.id === "x-mark") toggleMenu();
 
-    if (
-      element.classList.contains("card") ||
-      element.classList.contains("card-div") ||
-      element.classList.contains("card-h2") ||
-      element.classList.contains("card-p")
-    )
-      redirectToNote(element.id);
+    if (element.closest(".card")) redirectToNote(element.closest(".card")!.id);
   });
 }
 
