@@ -36,7 +36,7 @@ const readNotePage: Function = (): void => {
     </section>
     <div class="flex gap-md py-lg">
       ${secondaryButtonIcon("Home", "Home", "/dashboard")}
-      ${secondaryButtonIcon("Edit", "Edit", "")}
+      ${secondaryButtonIcon("Edit", "Edit", "/edit")}
       ${secondaryButtonIcon("Delete", "Delete", "")}
     </div>
   `;

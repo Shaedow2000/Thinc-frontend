@@ -16,6 +16,7 @@ import abortedPage from "../pages/errorPages/abortConfirmed";
 import abortPage from "../pages/authPages/abort";
 import pageNotFound from "../pages/errorPages/notFound";
 import isUserLoggedIn from "./userLoggedIn";
+import editNotePage from "../pages/app/editNote";
 
 export default async function clientRouter(): Promise<void> {
   const router: Record<string, Function> = {
@@ -33,6 +34,7 @@ export default async function clientRouter(): Promise<void> {
     "/dashboard": dashboardPage,
     "/note": readNotePage,
     "/new": newNotePage,
+    "/edit": editNotePage,
     "/draft": draftPage,
     "/search": searchNotePage,
   };
